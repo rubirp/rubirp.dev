@@ -11,7 +11,9 @@ const baseUrl = import.meta.env.BASE_URL;
     <label for="my-drawer" class="drawer-overlay"></label>
     <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col justify-between divide-y divide-gray-300">
         <div>
-            <div class="w-fit mx-auto">
+            <div class="w-fit mx-auto flex flex-col justify-center">
+                <text class="text-sm font-bold text-center">Yo, 👋</text>
+
                 <a href={baseUrl} >
                     <div class="transition ease-in-out hover:scale-[102%] block m-auto">
                         <div class="w-[8.5rem]">
@@ -19,12 +21,17 @@ const baseUrl = import.meta.env.BASE_URL;
                         </div>
                     </div>
                 </a>
+
+                <text class="text-sm font-bold text-center">Rubén Rodríguez</text>
             </div>
             <SidebarMenuRubi sideBarActiveItemID={sideBarActiveItemID} />
         </div>
 
-        <div class="pt-10">
-            <div class="w-fit mx-auto">
+        <div class="">
+            <div class="w-fit mx-auto flex flex-col justify-center">
+
+                <text class="p-3 text-sm font-bold text-center">Mi marca, 🕹️</text>
+
                 <a href="https://frasquitogames.com/" target="_blank" >
                     <div class="transition ease-in-out hover:scale-[102%] block m-auto">
                         <div class="w-[8.5rem]">
@@ -32,6 +39,9 @@ const baseUrl = import.meta.env.BASE_URL;
                         </div>
                     </div>
                 </a>
+
+                <text class="p-2 text-sm font-bold text-center">Frasquito Games</text>
+
             </div>
             <SidebarMenuBrand sideBarActiveItemID={sideBarActiveItemID} />
         </div>
