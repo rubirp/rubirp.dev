@@ -1,0 +1,49 @@
+---
+import SidebarFooter from "./SidebarFooter.astro";
+import SidebarMenu from "./SidebarMenu.astro";
+import { Image } from 'astro:assets';
+const { sideBarActiveItemID } = Astro.props;
+
+const isProd = import.meta.env.PROD;
+const isDev = import.meta.env.DEV
+const mode = import.meta.env.MODE;
+const baseUrl = import.meta.env.BASE_URL;
+const site = import.meta.env.SITE;
+const assetsPrefix = import.meta.env.ASSETS_PREFIX;
+
+/*
+console.log("---------------------------------------------------");
+console.log("rubi isProd: " + isProd);
+console.log("rubi isDev: " + isDev);
+console.log("rubi mode: " + mode);
+console.log("rubi baseUrl: " + baseUrl);
+console.log("rubi site: " + site);
+console.log("rubi assetsPrefix: " + assetsPrefix);
+console.log("---------------------------------------------------");
+*/
+---
+
+<div class="drawer-side z-40">
+    <label for="my-drawer" class="drawer-overlay"></label>
+    <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
+        <div class="w-fit mx-auto">
+            <a href={baseUrl} >
+                <div class="transition ease-in-out hover:scale-[102%] block m-auto">
+                    <div class="w-[8.5rem]">
+                    
+                    <Image src={baseUrl + "/images/profile.webp"} alt="Profile image" class="mask mask-circle" format="webp" width="300" height="300" />
+                    
+                    </div>
+                </div>
+            </a>
+        </div>
+        <SidebarMenu sideBarActiveItemID={sideBarActiveItemID} />
+        <SidebarFooter />
+    </aside>
+</div>
+
+<style>
+    .mask {
+        mask-position: 0% 25%; 
+    }
+</style>

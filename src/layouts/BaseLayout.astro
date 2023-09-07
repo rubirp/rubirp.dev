@@ -1,9 +1,12 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../content/config";
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION} = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,9 +17,29 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION} = Astro.props;
     </head>
     
     <body>
-        <main>
-            <slot />
-        </main>
+
+        <div class="bg-base-100 drawer lg:drawer-open">
+
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+            <div class="drawer-content bg-base-100">
+
+                <Header title={title} />
+
+                <div class="md:flex md:justify-center">
+                    <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
+                        <slot />
+                    </main>
+                </div>
+
+                <Footer />
+
+            </div>
+
+            {includeSidebar && <Sidebar sideBarActiveItemID={sideBarActiveItemID} />}
+
+        </div>
+
     </body>
 
 </html>
