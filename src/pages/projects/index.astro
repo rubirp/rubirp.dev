@@ -1,0 +1,117 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout  from '../../layouts/BaseLayout.astro';
+import HorizontalCard from '../../components/HorizontalCard.astro';
+import Toggle from '../../components/projects/Toggle.astro';
+
+
+// Recupera `src/content/projects/**`
+//const projects = await getCollection('projects');
+
+// Recupera `src/content/projects/my-slug-project`
+//const myProject = await getEntry('projects', 'my-slug-project');
+
+// Filtra las entradas de contenido con `draft: true`
+//const projects = await getCollection('projects', ({ data }) => {
+//  return data.category === 'personal';
+//});
+
+// Filtrar las entradas de contenido con `draft: true` solo al construir para producción
+//const projects = await getCollection('projects', ({ data }) => {
+//  return import.meta.env.PROD ? data.draft !== true : true;
+//});
+
+// Filtra las entradas por subdirectorio en la colección
+//const englishDocsEntries = await getCollection('projects', ({ id }) => {
+//  return id.startsWith('en/');
+//});
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const projects = await getCollection('projects', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+
+const query_category = Astro.url.searchParams.get('category')! || '';
+
+---
+
+<BaseLayout title = "Proyectos" sideBarActiveItemID="projects">
+	<div class="mb-5 flex w-full justify-between ">
+        <h1 class="text-3xl w-full font-bold">Proyectos</h1>
+
+        <div>
+            <Toggle category="personal" label="Personal"/>
+            <Toggle category="professional" label="Profesional"/>
+        </div>
+
+    </div>
+    
+    <div id="ul-projects" class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
+        <p class="font-bold">¡Lo siento!</p>
+        <p>Ningún proyecto coincide con este filtro, cambia los filtros para ver más proyectos.</p>
+    </div>
+
+    <ul>
+    {   
+        projects.map((project) => (
+            <HorizontalCard
+                title={project.data.title}
+                excerpt={project.data.excerpt}
+                img={project.data.thumbnail}
+                url={baseUrl + "/projects/" + project.slug}
+                category = {project.data.category}
+                tags = {project.data.tags}
+            />
+        )) 
+    }
+    </ul>
+</BaseLayout>
+
+<script define:vars={{ query_category: query_category }}>
+
+    const toggle_personal = document.getElementById('toggle-personal');
+    const toggle_professional = document.getElementById('toggle-professional');
+
+    if(query_category){
+        toggle_personal.checked = true;
+        toggle_professional.checked = false;
+    }
+
+    if(!toggle_personal.checked && !toggle_professional.checked){
+        toggle_personal.checked = true;
+        toggle_professional.checked = true;
+    }
+
+    toggle_personal.addEventListener('click', displayCards);
+    toggle_professional.addEventListener('click', displayCards);
+
+    displayCards();
+
+    function displayCards() {
+        const personal_cards = document.getElementsByClassName('personal-category');
+        const professional_cards = document.getElementsByClassName('professional-category');
+        const personal_checked = toggle_personal.checked;
+        const professional_checked = toggle_professional.checked;
+
+        const ul = document.getElementById("ul-projects");
+        if(ul){
+            if(personal_checked || professional_checked) 
+                ul.classList.add('hidden');
+            else                
+                ul.classList.remove('hidden');
+        }
+
+        for (let i = 0; i < personal_cards.length; i++) {
+            if(personal_checked)    personal_cards[i].classList.remove('hidden');
+            else                    personal_cards[i].classList.add('hidden');
+        }
+
+        for (let i = 0; i < professional_cards.length; i++) {
+            if(professional_checked)    professional_cards[i].classList.remove('hidden');
+            else                        professional_cards[i].classList.add('hidden');
+        }
+    }
+    
+</script>

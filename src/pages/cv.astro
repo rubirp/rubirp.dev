@@ -1,9 +1,171 @@
 ---
-import BaseLayout  from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout sideBarActiveItemID="cv">
-	<div class="pb-12 mt-5">
-		<div class="text-xl py-1">CV</div>
-	</div>
+<BaseLayout title="CV" sideBarActiveItemID="cv">
+
+  <div class="flex justify-end space-x-4">
+
+    <a href={baseUrl + "/docs/cv-es.pdf"} target="_blank" class="btn">
+      <svg class="w-6 h-6 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#C60A1D" d="M36 27c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4V9c0-2.209 1.791-4 4-4h28c2.209 0 4 1.791 4 4v18z"/><path fill="#FFC400" d="M0 12h36v12H0z"/><path fill="#EA596E" d="M9 17v3c0 1.657 1.343 3 3 3s3-1.343 3-3v-3H9z"/><path fill="#F4A2B2" d="M12 16h3v3h-3z"/><path fill="#DD2E44" d="M9 16h3v3H9z"/><ellipse fill="#EA596E" cx="12" cy="14.5" rx="3" ry="1.5"/><ellipse fill="#FFAC33" cx="12" cy="13.75" rx="3" ry=".75"/><path fill="#99AAB5" d="M7 16h1v7H7zm9 0h1v7h-1z"/><path fill="#66757F" d="M6 22h3v1H6zm9 0h3v1h-3zm-8-7h1v1H7zm9 0h1v1h-1z"/></svg>
+      <span>Versión PDF</span>
+      <svg class="w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
+    </a> 
+
+    <a href={baseUrl + "/docs/cv-en.pdf"} target="_blank" class="btn">
+      <svg class="w-6 h-6 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#00247D" d="M0 9.059V13h5.628zM4.664 31H13v-5.837zM23 25.164V31h8.335zM0 23v3.941L5.63 23zM31.337 5H23v5.837zM36 26.942V23h-5.631zM36 13V9.059L30.371 13zM13 5H4.664L13 10.837z"/><path fill="#CF1B2B" d="M25.14 23l9.712 6.801c.471-.479.808-1.082.99-1.749L28.627 23H25.14zM13 23h-2.141l-9.711 6.8c.521.53 1.189.909 1.938 1.085L13 23.943V23zm10-10h2.141l9.711-6.8c-.521-.53-1.188-.909-1.937-1.085L23 12.057V13zm-12.141 0L1.148 6.2C.677 6.68.34 7.282.157 7.949L7.372 13h3.487z"/><path fill="#EEE" d="M36 21H21v10h2v-5.836L31.335 31H32c1.117 0 2.126-.461 2.852-1.199L25.14 23h3.487l7.215 5.052c.093-.337.158-.686.158-1.052v-.058L30.369 23H36v-2zM0 21v2h5.63L0 26.941V27c0 1.091.439 2.078 1.148 2.8l9.711-6.8H13v.943l-9.914 6.941c.294.07.598.116.914.116h.664L13 25.163V31h2V21H0zM36 9c0-1.091-.439-2.078-1.148-2.8L25.141 13H23v-.943l9.915-6.942C32.62 5.046 32.316 5 32 5h-.663L23 10.837V5h-2v10h15v-2h-5.629L36 9.059V9zM13 5v5.837L4.664 5H4c-1.118 0-2.126.461-2.852 1.2l9.711 6.8H7.372L.157 7.949C.065 8.286 0 8.634 0 9v.059L5.628 13H0v2h15V5h-2z"/><path fill="#CF1B2B" d="M21 15V5h-6v10H0v6h15v10h6V21h15v-6z"/></svg>
+      <span>PDF Version</span>
+      <svg class="w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
+    </a>
+
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-3xl font-bold">Perfil</h2>
+  </div>
+
+  <div class="mb-10">
+    Mi nombre es Rubén Rodríguez Pardo. En 2017, me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.<br><br>
+    Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso, fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.<br><br>
+    Unos años más tarde, consideré oportuno dar el salto al mundo profesional como desarrollador de videojuegos. Fui contratado por un estudio español llamado Monti Games, que ofrecía servicios de desarrollo de videojuegos para terceros. Durante dos años y medio, trabajé como desarrollador, colaborando con empresas punteras en el sector, como Electronic Arts.
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-3xl w-full font-bold">Experiencia</h2>
+  </div>
+
+  <div class="time-line-container">
+    <TimeLineElement
+      title="Monti Games | Desarrollador de videojuegos | Pogo, Electronic Arts"
+      subtitle="Desde 05/2021 hasta 08/2023 en Monti Games, Elche, España"
+      description="Durante esta etapa, colaboramos directamente con la rama de Pogo (Electronic Arts), una plataforma web dedicada a servir videojuegos de corte casual. Formé parte del equipo de ingeniería dedicado exclusivamente al desarrollo y mantenimiento de videojuegos. También realicé tareas de desarrollo de herramientas generales, como actualizaciones de frameworks y SDKs utilizados." 
+      projects={[
+        {
+          title: "Risk: Pogo Domination",
+          subtitle: "Tercer proyecto, refactoring y performance",
+          description: "Realizamos un refactoring completo del proyecto, con el objetivo de mejorar su rendimiento y facilitar su mantenimiento. Implementamos nuevas funcionalidades, migramos código de la lógica del cliente a la parte del servidor, mejoramos la sincronía entre jugadores, permitimos restaurar el estado de las partidas por abandono y corregimos bugs.",
+          images: [{url: "/images/risk/1.webp", alt: "Imagen 1"}],
+          slug: "risk-pogo-domination",
+          url: "https://www.pogo.com/games/risk-pogo-domination"
+        },
+        {
+          title: "Yahtzee: Wild!",
+          subtitle: "Segundo proyecto, juego desde cero",
+          description: "Hemos desarrollado este juego desde su inicio, he estado involucrado en diversas tareas durante el desarrollo de este juego, abarcando lógica y mecánicas del cliente y servidor, restauración de partidas, emparejamiento, recompensas, FTUE, mejoras de rendimiento y corrección de errores, entre otras.",
+          images: [{url: "/images/yahtzee/1.webp", alt: "Imagen 1"}],
+          slug: "yahtzee-wild",
+          url: "https://www.pogo.com/games/yahtzee-wild"
+        },
+        {
+          title: "Scrabble: Crossword Game",
+          subtitle: "Primer proyecto, rebranding y mantenimiento",
+          description: "Fue mi primer proyecto, me uní a él en una etapa avanzada de desarrollo. Implicó una actualización gráfica y mecánica de un juego existente en la plataforma. Mi enfoque principal fue brindar soporte, principalmente del lado del cliente. Esta experiencia me ayudó a familiarizarme con la metodología de trabajo y los frameworks utilizados por el equipo.",
+          images: [{url: "/images/scrabble/1.webp", alt: "Imagen 1"}],
+          slug: "scrabble",
+          url: "https://www.pogo.com/games/scrabble"
+        }
+      ]}
+    />
+
+    <TimeLineElement
+      title="Frasquito Games | Desarrollador de videojuegos | Proyectos independientes"
+      subtitle="Desde 01/2018 hasta 05/2023 en Frasquito Games, Albacete, España"
+      description="Durante esta etapa, me enfoqué en el desarrollo de proyectos personales con el propósito de perfeccionar mis habilidades como programador y desarrollador. Este enfoque me permitió enriquecer mi portafolio profesional. Con la intención de presentar estos proyectos al público, creé mi propia marca, Frasquito Games, junto con su sitio web correspondiente, donde he compartido estos proyectos de manera accesible." 
+      projects={[
+        {
+          title: "Touch the Coin: Hypercasual Game",
+          subtitle: "Juego publicado en Google Play",
+          description: "Llevé a cabo un proyecto que abarcó todo el ciclo de vida del desarrollo de software, culminando en su lanzamiento exitoso en el mercado. Como resultado, logré obtener más de mil descargas y una impresionante valoración de 4.9/5. Durante el proceso de desarrollo, opté por emplear el framework PhaserJS para crear la aplicación.",
+          images: [{url: "/images/touch-the-coin/0.png", alt: "Imagen 1"}],
+          slug: "touch-the-coin",
+          url: "https://frasquitogames.itch.io/touch-the-coin"
+        },
+        {
+          title: "Pet Balls",
+          subtitle: "Juego realizado en Cocos Creator",
+          description: "Desarrollé un videojuego en un lapso de solo dos semanas para poner a prueba las capacidades del motor Cocos Creator. Este juego cuenta con una variedad de escenarios, cada uno con varios niveles de dificultad. El núcleo del juego se basa en minijuegos que hacen uso de mecánicas de física, lo que añade un elemento de desafío adicional.",
+          images: [{url: "/images/pet-balls/0.png", alt: "Imagen 1"}],
+          slug: "pet-balls",
+          url: "https://frasquitogames.itch.io/pet-balls"
+        },
+        {
+          title: "Otros proyectos",
+          subtitle: "Visita mi sitio web para ver más proyectos",
+          description: "En frasquitogames.com, puedes encontrar más proyectos que he desarrollado de forma independiente. Estos proyectos abarcan una amplia variedad de géneros y mecánicas, y están disponibles para jugar de forma gratuita.",
+          images: [{url: "/images/projects-thumbnail.png", alt: "Imagen 1"}],
+          url: "https://frasquitogames.com"
+        }
+      ]}
+    />
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-3xl w-full font-bold">Educación</h2>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Grado en Ingeniería Multimedia"
+      subtitle="Desde 2012 hasta 2017 en la Universidad de Alicante, Alicante, España"
+    />
+    <TimeLineElement
+      title="Bachillerato de Ciencias y Tecnología"
+      subtitle="Desde 2010 hasta 2012 en IES Herminio Almendros, Almansa, España"
+    />
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-3xl w-full font-bold">Tecnologías</h2>
+  </div>
+
+  <div class="mb-2">
+    <h3 class="font-semibold mb-1">Motores y frameworks usados frecuentemente</h3>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>Cocos Creator</li>
+    <li>Unity</li>
+    <li>Godot</li>
+    <li>PhaserJS</li>
+    <li>SFML</li>
+  </ul>
+
+  <div class="mb-2">
+    <h3 class="font-semibold mb-1">Lenguajes usados frecuentemente</h3>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>JavaScript</li>
+    <li>C/C++</li>
+    <li>C#</li>
+    <li>HTML</li>
+    <li>CSS</li>
+  </ul>
+
+  <div class="mb-2">
+    <h3 class="font-semibold mb-1">Herramientas de caracter general</h3>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>Git</li>
+    <li>Perforce</li>
+    <li>Slack</li>
+    <li>Jira</li>
+    <li>Basecamp</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Habilidades</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>Español Nativo</li>
+    <li>Inglés Nivel B1</li>
+    <li>Trabajo en Equipo</li>
+    <li>Proactividad</li>
+    <li>Autogestión</li>
+  </ul>
 </BaseLayout>

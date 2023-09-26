@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title = "404: No encontrado" includeSidebar={false}>
+  <div class="text-center">
+    <h1 class="text-9xl font-bold mb-4">🏝</h1>
+    <h1 class="text-9xl font-bold mb-2">404</h1>
+    <h3 class="text-2xl">La página que estás buscando no se ha podido encontrar.</h3>
+    <h3 class="text-2xl mt-9">Te puede interesar:</h3>
+    <a class="btn btn-accent m-2" href={baseUrl}>Inicio</a>
+    <a class="btn btn-accent m-2" href={baseUrl + "/projects"}>Proyectos</a>
+    <a class="btn btn-accent m-2" href={baseUrl + "/cv"}>CV</a>
+  </div>
+</BaseLayout>

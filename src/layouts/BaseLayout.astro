@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../content/config";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID} = Astro.props;
 ---
@@ -13,7 +13,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = tru
 <html lang="es">
 
     <head>
-        <BaseHead title={title} description={description}/>
+        <BaseHead title={SITE_TITLE + " | " + title} description={description}/>
     </head>
     
     <body>
@@ -24,23 +24,23 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = tru
 
             <div class="drawer-content bg-base-100">
 
-                <Header title={title} />
+                {includeSidebar && <Header title={title} />}
 
                 <div class="md:flex md:justify-center">
-                    <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
-                        <slot />
+                    <main class="p-6 pt-10 lg:max-w-[900px] lg:min-w-[900px] max-w-[100vw] min-w-[100vw]">
+                      <slot />
                     </main>
                 </div>
 
                 <!-- <Footer /> -->
-               
 
             </div>
 
             {includeSidebar && <Sidebar sideBarActiveItemID={sideBarActiveItemID} />}
 
         </div>
-
+        
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,51 @@
+---
+
+import { Image } from "astro:assets";
+import BaseLayout from "./BaseLayout.astro";
+import Category from "../components/Category.astro";
+import Carousel from "../components/Carousel.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+
+const { title, description, subtitle, category, main_media, media, links, tags} = Astro.props;
+
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+      {
+        main_media && <Image width="750" height="422" format="webp" src={baseUrl + main_media.url} alt={main_media.alt} class="w-full mb-6"/>
+        || 
+        media && <Carousel media={media} />
+      }
+      
+      <div class="flex justify-between">
+        <div class="flex">
+          <h1 class="title my-2 text-4xl mr-4">{title}</h1>
+          {category && <Category category = {category}/>}
+        </div>
+        {
+          links &&
+          <div class="my-auto">
+            {
+              links.map((link:{url:string, value:string}) => 
+                <a href={link.url} target="_blank" class="ml-4 font-medium hover:underline text-primary">
+                  <span>{link.value}</span>
+                  <svg class="w-4 h-4 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
+                </a> 
+              )
+            }
+          </div>
+        }
+      </div>
+      {subtitle && <h2 class="text-2xl">{subtitle}</h2>}
+      <div class="card-actions justify-end mt-2">{tags && tags.map((tag: string) => <div class="badge badge-outline">{tag}</div>)}</div>
+      <div class="divider my-2"></div>
+
+      <slot />
+
+    </article>
+  </div>
+</BaseLayout>

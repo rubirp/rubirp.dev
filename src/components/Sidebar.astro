@@ -1,19 +1,27 @@
 ---
-import SidebarFooter from "./SidebarFooter.astro";
 import SidebarMenuRubi from "./SidebarMenuRubi.astro";
 import SidebarMenuBrand from "./SidebarMenuBrand.astro";
 import { Image } from 'astro:assets';
+import SidebarSocialBrand from "./SidebarSocialBrand.astro";
+import SidebarSocialRubi from "./SidebarSocialRubi.astro";
+
 const { sideBarActiveItemID } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class="drawer-side z-40">
     <label for="my-drawer" class="drawer-overlay"></label>
-    <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col justify-between divide-y divide-gray-300">
-        <div>
-            <div class="w-fit mx-auto flex flex-col justify-center">
-                <text class="text-sm font-bold text-center">Yo, 👋</text>
+    <aside class="px-2 pt-2 min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col h-full">
+        <div class="h-1/2 mb-5">
+            <div class="flex justify-between">
+                <div class="divider my-0 w-1/4" />
+                <text class="text-sm font-bold text-center">Rubén Rodríguez</text>
+                <div class="divider my-0 w-1/4" />
+            </div>
 
+            <SidebarSocialRubi />
+
+            <div class="w-fit mx-auto flex flex-col justify-center">
                 <a href={baseUrl} >
                     <div class="transition ease-in-out hover:scale-[102%] block m-auto">
                         <div class="w-[8.5rem]">
@@ -21,33 +29,37 @@ const baseUrl = import.meta.env.BASE_URL;
                         </div>
                     </div>
                 </a>
-
-                <text class="text-sm font-bold text-center">Rubén Rodríguez</text>
             </div>
+
             <SidebarMenuRubi sideBarActiveItemID={sideBarActiveItemID} />
         </div>
 
-        <div class="">
+        <div class="h-1/2 mt-5">
+            <div class="flex justify-between">
+                <div class="divider my-0 w-1/4" />
+                <div class="flex flex-col">
+                    <text class="text-sm font-bold text-center">Frasquito Games</text>
+                    <text class="text-sm text-center">(mi marca)</text>
+                </div>
+                <div class="divider my-0 w-1/4" />
+            </div>
+
+            <SidebarSocialBrand />
+
             <div class="w-fit mx-auto flex flex-col justify-center">
-
-                <text class="p-3 text-sm font-bold text-center">Mi marca, 🕹️</text>
-
                 <a href="https://frasquitogames.com/" target="_blank" >
                     <div class="transition ease-in-out hover:scale-[102%] block m-auto">
                         <div class="w-[8.5rem]">
-                        <Image src={baseUrl + "/images/fg.png"} alt="Frasquito Games Logo" format="webp" width="300" height="300" />
+                        <Image src={baseUrl + "/images/brand_logo.png"} alt="Frasquito Games Logo" format="webp" width="300" height="300" />
                         </div>
                     </div>
                 </a>
 
-                <text class="p-2 text-sm font-bold text-center">Frasquito Games</text>
-
             </div>
+
             <SidebarMenuBrand sideBarActiveItemID={sideBarActiveItemID} />
         </div>
 
-
-        <SidebarFooter />
     </aside>
 </div>
 
