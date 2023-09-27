@@ -10,7 +10,7 @@ const { category, label } = Astro.props;
     {category === 'professional' && <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-200 dark:peer-focus:ring-green-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-green-700"></div></div>}
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        class=`${category === "personal" ? 'stroke-blue-700' : 'stroke-green-700'} mr-1.5 ml-2`  
+        class=`stroke-current mr-1.5 ml-2`  
         width="20" 
         height="20" 
         viewBox="0 0 24 24" 
@@ -23,5 +23,5 @@ const { category, label } = Astro.props;
         {category === "personal" && (<path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" /> <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />)}
         {category === 'professional' && (<path d="M3 4a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-12z" /><path d="M3 13h18" /><path d="M8 21h8" /><path d="M10 17l-.5 4" /><path d="M14 17l.5 4" />)}
     </svg>
-    <span class=`text-sm t uppercase text-${category === "personal" ? 'blue' : 'green'}-700 dark:text-gray-300`>{label}</span>
+    <span class=`text-sm t uppercase dark:text-gray-300`>{label}</span>
 </label>

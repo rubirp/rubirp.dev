@@ -32,9 +32,6 @@ const projects = await getCollection('projects', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
 });
 
-
-const query_category = Astro.url.searchParams.get('category')! || '';
-
 ---
 
 <BaseLayout title = "Proyectos" sideBarActiveItemID="projects">
@@ -69,25 +66,23 @@ const query_category = Astro.url.searchParams.get('category')! || '';
     </ul>
 </BaseLayout>
 
-<script define:vars={{ query_category: query_category }}>
+<script>
 
     const toggle_personal = document.getElementById('toggle-personal');
     const toggle_professional = document.getElementById('toggle-professional');
 
-    if(query_category){
-        toggle_personal.checked = true;
-        toggle_professional.checked = false;
+    if(toggle_personal && toggle_professional){
+
+        if(!toggle_personal.checked && !toggle_professional.checked){
+            toggle_personal.checked = true;
+            toggle_professional.checked = true;
+        }
+
+        toggle_personal.addEventListener('click', displayCards);
+        toggle_professional.addEventListener('click', displayCards);
+
+        displayCards();
     }
-
-    if(!toggle_personal.checked && !toggle_professional.checked){
-        toggle_personal.checked = true;
-        toggle_professional.checked = true;
-    }
-
-    toggle_personal.addEventListener('click', displayCards);
-    toggle_professional.addEventListener('click', displayCards);
-
-    displayCards();
 
     function displayCards() {
         const personal_cards = document.getElementsByClassName('personal-category');
