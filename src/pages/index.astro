@@ -9,14 +9,21 @@ const personal_projects = await getCollection('projects', ({ data }) => {
   return data.category === 'personal';
 });
 
+personal_projects.sort((a, b) => {
+    return a.data.priority - b.data.priority;
+});
+
 const professional_projects = await getCollection('projects', ({ data }) => {
   return data.category === 'professional';
 });
 
+professional_projects.sort((a, b) => {
+    return a.data.priority - b.data.priority;
+});
 ---
 
 <BaseLayout title = "Inicio" sideBarActiveItemID="home">
-	<div class="pb-12 mt-5">
+	<div class="pb-12">
 		<div class="text-xl py-1">Hola, bienvenid@ 👋</div>
 		<div class="text-5xl font-bold">Soy Rubén Rodríguez</div>
 		<div class="text-3xl py-3 font-bold">Ingeniero Multimedia y Desarrollador de Videojuegos</div>

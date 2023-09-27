@@ -7,13 +7,14 @@ import Sidebar from '../components/Sidebar.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID} = Astro.props;
+
 ---
 
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 
     <head>
-        <BaseHead title={SITE_TITLE + " | " + title} description={description}/>
+        <BaseHead title={SITE_TITLE + " | " + title} description={description}/>   
     </head>
     
     <body>
@@ -40,7 +41,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = tru
 
         </div>
         
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+        <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     </body>
 
 </html>

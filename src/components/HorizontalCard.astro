@@ -11,16 +11,7 @@ const baseUrl = import.meta.env.BASE_URL;
     
     <div class="hero-content flex-col md:flex-row">
         {
-            img && (
-            <Image
-                src={baseUrl + img}
-                width="750" 
-                height="422"
-                format="webp"
-                alt={title}
-                class="max-w-full md:max-w-[13rem] rounded-lg"
-            />
-            )
+            img && <Image src={baseUrl + img} width="750"  height="422" format="webp" alt={title} class="max-w-full md:max-w-[13rem] rounded-lg"/>
         }
         <div class="grow w-full">
             <div class="flex">

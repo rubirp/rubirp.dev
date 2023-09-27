@@ -8,8 +8,12 @@ category: 'personal'
 thumbnail: '/images/prisionero/0.png'
 
 tags: ['sfml', 'c++', 'ia', 'pc', 'prototipo', 'puzzle']
-main_media: {type: 'image', url: '/images/prisionero/0.png', origin: 'local', alt: 'Prisionero imagen principal'}
-media: [{type: '', url: '', origin: '', alt: ''}]
+#main_media: {type: 'image', url: '/images/prisionero/0.png', origin: 'local', alt: 'Prisionero imagen principal'}
+media: [
+    {type: 'image', url: '/images/prisionero/0.png', origin: 'local', alt: 'Prisionero imagen 1'},
+    {type: 'image', url: '/images/prisionero/1.png', origin: 'local', alt: 'Prisionero imagen 2'},
+    {type: 'image', url: '/images/prisionero/2.png', origin: 'local', alt: 'Prisionero imagen 3'},
+]
 links: [
     {url: 'https://frasquitogames.com/prisionero-prototipo-que-implementa-ia', value: 'Visitar'}
 ]

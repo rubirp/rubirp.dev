@@ -40,6 +40,7 @@ const projectsSchema = z.object({
     main_media: z.object({type: z.string(), url: z.string(), origin: z.string(), alt: z.string()}).optional(),
     media: z.array(z.object({type: z.string(), url: z.string(), origin: z.string(), alt: z.string()})).optional(),
     links: z.array(z.object({url: z.string(), value: z.string()})).optional(),
+    priority: z.number().optional(),
 });
 
 const projectCollection = defineCollection({ type: 'content', schema: projectsSchema });

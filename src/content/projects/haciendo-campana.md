@@ -15,6 +15,7 @@ links: [
     {url: 'http://cpcretrodev.byterealms.com/2016/11/resultados-y-juegos-cpcretrodev-2016/', value: 'Descargar'}
 ]
 
+priority: 7
 ---
 
 <p>

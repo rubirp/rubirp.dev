@@ -8,12 +8,20 @@ category: 'personal'
 thumbnail: '/images/mix-ball/0.png'
 
 tags: ['phaser', 'javascript', 'físicas', 'web']
-main_media: {type: 'image', url: '/images/mix-ball/0.png', origin: 'local', alt: 'Mix Ball imagen principal'}
-media: [{type: '', url: '', origin: '', alt: ''}]
+#main_media: {type: 'image', url: '/images/mix-ball/0.png', origin: 'local', alt: 'Mix Ball imagen principal'}
+media: [
+    {type: 'image', url: '/images/mix-ball/1.png', origin: 'local', alt: 'Mix Ball imagen 1'},
+    {type: 'image', url: '/images/mix-ball/2.png', origin: 'local', alt: 'Mix Ball imagen 2'},
+    {type: 'image', url: '/images/mix-ball/3.png', origin: 'local', alt: 'Mix Ball imagen 3'},
+    {type: 'image', url: '/images/mix-ball/4.png', origin: 'local', alt: 'Mix Ball imagen 4'},
+    {type: 'image', url: '/images/mix-ball/5.png', origin: 'local', alt: 'Mix Ball imagen 5'}
+]
 links: [
     {url: 'https://frasquitogames.com/mix-ball-juego-casual-con-phaserjs', value: 'Visitar'},
     {url: 'https://frasquitogames.itch.io/mix-ball', value: 'Jugar'}
 ]
+
+priority: 6
 ---
 <p>
 Mix Ball es un juego casual desarrollado utilizando el framework PhaserJS, creado con el propósito de explorar y poner a prueba esta tecnología para comprender su potencial y capacidades.

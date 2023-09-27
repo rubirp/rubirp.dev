@@ -8,9 +8,17 @@ category: 'professional'
 thumbnail: '/images/risk/0.webp'
 
 tags: ['cocos creator', 'typescript', 'javascript', 'pogo', 'tablero', 'dados', 'multijugador']
-main_media: {type: 'image', url: '/images/risk/0.webp', origin: 'local', alt: 'Risk imagen principal'}
-media: [{type: '', url: '', origin: '', alt: ''}]
+#main_media: {type: 'image', url: '/images/risk/0.webp', origin: 'local', alt: 'Risk imagen principal'}
+media: [
+    {type: 'image', url: '/images/risk/1.webp', origin: 'local', alt: 'Risk imagen 1'},
+    {type: 'image', url: '/images/risk/2.webp', origin: 'local', alt: 'Risk imagen 2'},
+    {type: 'image', url: '/images/risk/3.webp', origin: 'local', alt: 'Risk imagen 3'},
+    {type: 'image', url: '/images/risk/4.webp', origin: 'local', alt: 'Risk imagen 4'},
+    {type: 'image', url: '/images/risk/5.webp', origin: 'local', alt: 'Risk imagen 5'}
+]
 links: [{url: 'https://www.pogo.com/games/risk-pogo-domination', value: 'Visitar'}]
+
+priority: 1
 
 ---
 

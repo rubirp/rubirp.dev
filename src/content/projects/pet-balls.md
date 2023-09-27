@@ -7,12 +7,20 @@ excerpt: 'Pet Balls es un proyecto concebido con el propósito de explorar y pon
 category: 'personal'
 tags: ['cocos creator', 'typescript', 'javascript']
 thumbnail: '/images/pet-balls/0.png'
-main_media: {type: 'image', url: '/images/pet-balls/0.png', origin: 'local', alt: 'Pet Balls imagen principal'}
-media: [{type: '', url: '', origin: '', alt: ''}]
+#main_media: {type: 'image', url: '/images/pet-balls/0.png', origin: 'local', alt: 'Pet Balls imagen principal'}
+media: [
+    {type: 'image', url: '/images/pet-balls/1.png', origin: 'local', alt: 'Pet Balls imagen 1'},
+    {type: 'image', url: '/images/pet-balls/2.png', origin: 'local', alt: 'Pet Balls imagen 2'},
+    {type: 'image', url: '/images/pet-balls/3.png', origin: 'local', alt: 'Pet Balls imagen 3'},
+    {type: 'image', url: '/images/pet-balls/4.png', origin: 'local', alt: 'Pet Balls imagen 4'},
+    {type: 'image', url: '/images/pet-balls/5.png', origin: 'local', alt: 'Pet Balls imagen 5'}
+]
 links: [
     {url: 'https://frasquitogames.com/pet-balls-test-del-motor-cocos-creator', value: 'Visitar'},
     {url: 'https://frasquitogames.itch.io/pet-balls', value: 'Jugar'}
 ]
+
+priority: 5
 ---
 
 <p>

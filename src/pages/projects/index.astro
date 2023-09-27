@@ -32,6 +32,11 @@ const projects = await getCollection('projects', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
 });
 
+projects.sort((a, b) => {
+    return a.data.priority - b.data.priority;
+});
+
+
 ---
 
 <BaseLayout title = "Proyectos" sideBarActiveItemID="projects">

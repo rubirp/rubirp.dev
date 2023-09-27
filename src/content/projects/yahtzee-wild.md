@@ -10,13 +10,15 @@ thumbnail: '/images/yahtzee/0.webp'
 tags: ['cocos creator', 'typescript', 'javascript', 'pogo', 'tablero', 'dados', 'multijugador']
 #main_media: {type: 'image', url: '/images/yahtzee/1.webp', origin: 'local', alt: 'Yahtzee imagen principal'}
 media: [
-    {type: 'image', url: '/images/yahtzee/1.webp', origin: 'local', alt: 'Yahtzee imagen principal'},
-    {type: 'image', url: '/images/yahtzee/2.webp', origin: 'local', alt: 'Yahtzee imagen principal'},
-    {type: 'image', url: '/images/yahtzee/3.webp', origin: 'local', alt: 'Yahtzee imagen principal'},
-    {type: 'image', url: '/images/yahtzee/4.webp', origin: 'local', alt: 'Yahtzee imagen principal'},
-    {type: 'image', url: '/images/yahtzee/5.webp', origin: 'local', alt: 'Yahtzee imagen principal'}
+    {type: 'image', url: '/images/yahtzee/1.webp', origin: 'local', alt: 'Yahtzee imagen 1'},
+    {type: 'image', url: '/images/yahtzee/2.webp', origin: 'local', alt: 'Yahtzee imagen 2'},
+    {type: 'image', url: '/images/yahtzee/3.webp', origin: 'local', alt: 'Yahtzee imagen 3'},
+    {type: 'image', url: '/images/yahtzee/4.webp', origin: 'local', alt: 'Yahtzee imagen 4'},
+    {type: 'image', url: '/images/yahtzee/5.webp', origin: 'local', alt: 'Yahtzee imagen 5'}
 ]
 links: [{url: 'https://www.pogo.com/games/yahtzee-wild', value: 'Visitar'}]
+
+priority: 2
 ---
 
 <p>

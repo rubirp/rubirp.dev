@@ -8,9 +8,17 @@ category: 'professional'
 thumbnail: '/images/scrabble/0.webp'
 
 tags: ['cocos creator', 'typescript', 'javascript', 'pogo', 'tablero', 'puzzle', 'multijugador']
-main_media: {type: 'image', url: '/images/scrabble/1.webp', origin: 'local', alt: 'Scrabble imagen principal'}
-media: [{type: '', url: '', origin: '', alt: ''}]
+#main_media: {type: 'image', url: '/images/scrabble/1.webp', origin: 'local', alt: 'Scrabble imagen principal'}
+media: [
+    {type: 'image', url: '/images/scrabble/1.webp', origin: 'local', alt: 'Scrabble imagen 1'},
+    {type: 'image', url: '/images/scrabble/2.webp', origin: 'local', alt: 'Scrabble imagen 2'},
+    {type: 'image', url: '/images/scrabble/3.webp', origin: 'local', alt: 'Scrabble imagen 3'},
+    {type: 'image', url: '/images/scrabble/4.webp', origin: 'local', alt: 'Scrabble imagen 4'},
+    {type: 'image', url: '/images/scrabble/5.webp', origin: 'local', alt: 'Scrabble imagen 5'}
+]
 links: [{url: 'https://www.pogo.com/games/scrabble', value: 'Visitar'}]
+
+priority: 3
 ---
 
 <p>
