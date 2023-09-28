@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import astroI18next from 'astro-i18next';
 import tailwind from "@astrojs/tailwind";
 
 
@@ -6,5 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://rubirp.github.io',
   base: '/rubirp.dev',
-  integrations: [tailwind()]
+  integrations: [tailwind(), astroI18next()]
 });

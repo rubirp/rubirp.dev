@@ -1,4 +1,6 @@
 ---
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
 import { Image } from "astro:assets";
 import Carousel from "../Carousel.astro";
 const { title, subtitle, description, projects } = Astro.props;
@@ -35,13 +37,13 @@ const baseUrl = import.meta.env.BASE_URL;
                     <h3 class="font-semibold mb-1">{project.title}</h3>
                     <div>
                     { project.slug &&
-                      <a href={baseUrl + '/projects/' + project.slug} class="font-medium hover:underline text-secondary">
-                        <span>Proyecto</span>
+                      <a href={localizePath('/projects/' + project.slug)} class="font-medium hover:underline text-secondary">
+                        <span>{t("links.project")}</span>
                       </a> 
                     }
                     { project.url &&
                       <a href={project.url} target="_blank" class="ml-4 font-medium hover:underline text-secondary">
-                        <span>Visitar</span>
+                        <span>{t("links.visit")}</span>
                         <svg class="w-4 h-4 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
                       </a> 
                     }

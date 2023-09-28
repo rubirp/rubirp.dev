@@ -1,5 +1,6 @@
 ---
-
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import Category from "../components/Category.astro";
@@ -8,11 +9,11 @@ import Carousel from "../components/Carousel.astro";
 const baseUrl = import.meta.env.BASE_URL;
 
 
-const { title, description, subtitle, category, main_media, media, links, tags} = Astro.props;
+const { title, description, subtitle, category, content, main_media, media, links, tags} = Astro.props;
 
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={t(description)}>
   <div class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {
@@ -23,7 +24,7 @@ const { title, description, subtitle, category, main_media, media, links, tags} 
       
       <div class="flex justify-between">
         <div class="flex">
-          <h1 class="title my-2 text-4xl mr-4">{title}</h1>
+          <h1 class="title my-2 text-4xl mr-4">{t(title)}</h1>
           {category && <Category category = {category}/>}
         </div>
         {
@@ -32,7 +33,7 @@ const { title, description, subtitle, category, main_media, media, links, tags} 
             {
               links.map((link:{url:string, value:string}) => 
                 <a href={link.url} target="_blank" class="ml-4 font-medium hover:underline text-secondary">
-                  <span>{link.value}</span>
+                  <span>{t(link.value)}</span>
                   <svg class="w-4 h-4 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
                 </a> 
               )
@@ -40,12 +41,19 @@ const { title, description, subtitle, category, main_media, media, links, tags} 
           </div>
         }
       </div>
-      {subtitle && <h2 class="text-2xl">{subtitle}</h2>}
-      <div class="card-actions justify-end mt-2">{tags && tags.map((tag: string) => <div class="badge badge-outline">{tag}</div>)}</div>
+      {subtitle && <h2 class="text-2xl">{t(subtitle)}</h2>}
+      <div class="card-actions justify-end mt-2">{tags && tags.map((tag: string) => <div class="badge badge-outline">{t(tag)}</div>)}</div>
       <div class="divider my-2"></div>
+      {
+      content &&
+      <Trans i18nKey={content}>
+        <text></text>
+        <br></br>
+      </Trans>
+      }
 
       <slot />
-
+      
     </article>
   </div>
 </BaseLayout>

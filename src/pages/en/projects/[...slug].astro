@@ -1,9 +1,9 @@
 ---
 import { changeLanguage } from "i18next";
 import { type CollectionEntry, getCollection } from "astro:content";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 
-changeLanguage("es");
+changeLanguage("en");
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects", ({ data }) => {

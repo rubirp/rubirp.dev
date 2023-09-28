@@ -36,6 +36,7 @@ const projectsSchema = z.object({
     excerpt: z.string(),
     category: z.string(),
     thumbnail: z.string(),
+    content: z.string().optional(),
     tags: z.array(z.string()).optional(),
     main_media: z.object({type: z.string(), url: z.string(), origin: z.string(), alt: z.string()}).optional(),
     media: z.array(z.object({type: z.string(), url: z.string(), origin: z.string(), alt: z.string()})).optional(),

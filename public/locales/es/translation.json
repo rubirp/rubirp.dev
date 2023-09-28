@@ -1,0 +1,189 @@
+{
+  "tags": {
+    "pogo": "Pogo",
+    "cocos": "Cocos",
+    "phaser": "Phaser",
+    "unity": "Unity",
+    "amstrad": "Amstrad",
+    "sfml": "SFML",
+    "cpp": "C++",
+    "csharp": "C#",
+    "cpctelera": "CPCTelera",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "html": "HTML",
+    "css": "CSS",
+    "multiplayer": "Multijugador"
+  },
+  "categories": {
+    "professional": "Profesional",
+    "personal": "Personal"
+  },
+  "links": {
+    "visit": "Visitar",
+    "project": "Proyecto",
+    "play": "Jugar",
+    "download": "Descargar"
+  },
+  "sidebar": {
+    "rubi": {
+      "title": "Rubén Rodríguez",
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "cv": "CV",
+      "contact": "Contactar"
+    },
+    "brand": {
+      "title": "Frasquito Games",
+      "subtitle": "(mi marca)",
+      "visit": "Visitar",
+      "games": "Juegos"
+    }
+  },
+  "home": {
+    "title": "Inicio",
+    "description": "Página de inicio del portafolio web de Rubén Rodríguez Pardo.",
+    "intro-t1": "¡Hola, bienvenid@ 👋!",
+    "intro-t2": "Soy Rubén Rodríguez",
+    "intro-t3": "Ingeniero Multimedia y Desarrollador de Videojuegos",
+    "intro-d": "<0>Tras finalizar mis estudios en 2017, he estado <1>desarrollando videojuegos</1> tanto de forma independiente como <1>profesionalmente</1>.</0><0>Fundé mi <1>propia marca, <3><2>Frasquito Games</2></3></1>, bajo la cual publico mis juegos y he trabajado en <1>proyectos profesionales</1> para empresas importantes en el <1>sector, como Electronic Arts</1>.</0><0><1>Navega por esta web</1> para obtener más detalles <4><2>sobre mí</2></4> y mis <5><2>proyectos</2></5>.</0>",
+    "intro-btn1": "📩 ¡Contáctame!",
+    "projects-pro-t": "<0>Proyectos profesionales (<2><1>Pogo</1></2>, Electronic Arts)</0>",
+    "projects-per-t": "<0>Proyectos personales (<2><1>Frasquito Games</1></2>)</0>"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Página de exposición de los proyectos de Rubén Rodríguez Pardo.",
+    "professional-cat": "Profesional",
+    "personal-cat": "Personal",
+    "professional-lab": "Profesional",
+    "personal-lab": "Personal",
+    "modal-t": "¡Lo siento!",
+    "modal-s": "Ningún proyecto coincide con este filtro. Cambia los filtros para ver más proyectos."
+  },
+  "cv": {
+    "title": "CV",
+    "description": "Página de CV y experiencia de Rubén Rodríguez Pardo.",
+    "summary-t": "Perfil",
+    "summary-d": "Mi nombre es Rubén Rodríguez Pardo. En 2017, me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.</0></0>Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso, fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.</0></0>Unos años más tarde, consideré oportuno dar el salto al mundo profesional como desarrollador de videojuegos. Fui contratado por un estudio español llamado Monti Games, que ofrecía servicios de desarrollo de videojuegos para terceros. Durante dos años y medio, trabajé como desarrollador, colaborando con empresas punteras en el sector, como Electronic Arts.",
+    "experience-t": "Experiencia",
+    "projects": {
+      "pro": {
+        "title": "Monti Games | Desarrollador de videojuegos | Pogo, Electronic Arts",
+        "subtitle": "Desde 05/2021 hasta 08/2023 en Monti Games, Elche, España",
+        "description": "Durante esta etapa, colaboramos directamente con la rama de Pogo (Electronic Arts), una plataforma web dedicada a servir videojuegos de corte casual. Formé parte del equipo de ingeniería dedicado exclusivamente al desarrollo y mantenimiento de videojuegos. También realicé tareas de desarrollo de herramientas generales, como actualizaciones de frameworks y SDKs utilizados.",
+        "0": {
+          "title": "Risk: Pogo Domination",
+          "subtitle": "Tercer proyecto, refactorización y mejora del rendimiento",
+          "description": "Realizamos una refactorización completa del proyecto con el objetivo de mejorar su rendimiento y facilitar su mantenimiento. Implementamos nuevas funcionalidades, migramos código de la lógica del cliente a la parte del servidor, mejoramos la sincronización entre jugadores, permitimos restaurar el estado de las partidas por abandono y corregimos errores."
+        },
+        "1": {
+          "title": "Yahtzee: Wild!",
+          "subtitle": "Segundo proyecto, desarrollo desde cero",
+          "description": "Desarrollamos este juego desde cero, estuve involucrado en diversas tareas durante el desarrollo, incluyendo lógica y mecánicas del cliente y servidor, restauración de partidas, emparejamiento, recompensas, FTUE, mejoras de rendimiento y corrección de errores, entre otras."
+        },
+        "2": {
+          "title": "Scrabble: Crossword Game",
+          "subtitle": "Primer proyecto, rebranding y mantenimiento",
+          "description": "Fue mi primer proyecto, me uní a él en una etapa avanzada de desarrollo. Implicó una actualización gráfica y mecánica de un juego existente en la plataforma. Mi enfoque principal fue brindar soporte, principalmente del lado del cliente. Esta experiencia me ayudó a familiarizarme con la metodología de trabajo y los frameworks utilizados por el equipo."
+        }
+      },
+      "per": {
+        "title": "Frasquito Games | Desarrollador de videojuegos | Proyectos independientes",
+        "subtitle": "Desde 01/2018 hasta 05/2023 en Frasquito Games, Albacete, España",
+        "description": "Durante esta etapa, me enfoqué en el desarrollo de proyectos personales con el propósito de perfeccionar mis habilidades como programador y desarrollador. Este enfoque me permitió enriquecer mi portafolio profesional. Con la intención de presentar estos proyectos al público, creé mi propia marca, Frasquito Games, junto con su sitio web correspondiente, donde he compartido estos proyectos de manera accesible.",
+        "0": {
+          "title": "Touch the Coin: Hypercasual Game",
+          "subtitle": "Juego publicado en Google Play",
+          "description": "Llevé a cabo un proyecto que abarcó todo el ciclo de vida del desarrollo de software, culminando en su lanzamiento exitoso en el mercado. Como resultado, logré obtener más de mil descargas y una impresionante valoración de 4.9/5. Durante el proceso de desarrollo, opté por emplear el framework PhaserJS para crear la aplicación."
+        },
+        "1": {
+          "title": "Pet Balls",
+          "subtitle": "Juego realizado en Cocos Creator",
+          "description": "Desarrollé un videojuego en un lapso de solo dos semanas para poner a prueba las capacidades del motor Cocos Creator. Este juego cuenta con una variedad de escenarios, cada uno con varios niveles de dificultad. El núcleo del juego se basa en minijuegos que hacen uso de mecánicas de física, lo que añade un elemento de desafío adicional."
+        },
+        "2": {
+          "title": "Otros proyectos",
+          "subtitle": "Visita mi sitio web para ver más proyectos",
+          "description": "En frasquitogames.com, puedes encontrar más proyectos que he desarrollado de forma independiente. Estos proyectos abarcan una amplia variedad de géneros y mecánicas, y están disponibles para jugar de forma gratuita."
+        }
+      }
+    },
+    "education-t": "Educación",
+    "education-tl-t1": "Grado en Ingeniería Multimedia",
+    "education-tl-s1": "Desde 2012 hasta 2017 en la Universidad de Alicante, Alicante, España",
+    "education-tl-t2": "Bachillerato de Ciencias y Tecnología",
+    "education-tl-s2": "Desde 2010 hasta 2012 en IES Herminio Almendros, Almansa, España",
+    "technologies-t": "Tecnologías",
+    "technologies-s1": "Motores y frameworks usados frecuentemente",
+    "technologies-s2": "Lenguajes usados frecuentemente",
+    "technologies-s3": "Herramientas de uso común",
+    "skills-t": "Habilidades",
+    "skill-1": "Español nativo",
+    "skill-2": "Inglés medio",
+    "skill-3": "Trabajo en equipo",
+    "skill-4": "Proactividad",
+    "skill-5": "Autogestión"
+  },
+  "content": {
+    "projects": {
+      "risk": {
+        "title": "Risk Pogo Domination",
+        "subtitle": "Conquista territorios y domina el mundo",
+        "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
+        "excerpt": "Ataca, defiende, fortifica y aumenta tu territorio mientras luchas contra otros jugadores para controlar el mundo en este clásico juego de mesa. Mueve estratégicamente tus unidades militares y tira los dados para conquistar tierras.",
+        "content": "<0>RISK: Pogo Domination es la clásica experiencia de juego de mesa, ¡con un toque Pogo! Juega con hasta otros 6 jugadores de Pogo™ en tres modos de juego RISK diferentes. En el modo Clásico, la clave de la victoria es conquistar todos los territorios del mundo. En el modo Capital, defiende tu capital de los invasores mientras te lanzas a la conquista de las capitales rivales. En el modo Misión Secreta, cada uno tiene su propio plan secreto para ganar la partida. ¿Serás capaz de completar tu misión secreta antes de que tus enemigos completen las suyas?</1></1>Reclama territorios por turnos para hacerte con tu parte del mundo. Refuerza tus territorios con una selección de unidades militares estéticamente únicas para atacar rápidamente a tus oponentes. Tira tus dados personalizables para determinar el destino de naciones enteras. Fortifica unidades militares a través de tus líneas de suministro internacionales para repeler a posibles atacantes, ¡o prepara la cabeza de playa para tu próximo asalto!</1></1>Gana cartas de RISK en cada ronda. Gira 3 cartas iguales para conseguir tropas de bonificación que te ayudarán a aplastar a tus oponentes o te sacarán del borde de la derrota.</0>"
+      },
+      "yahtzee": {
+        "title": "Yahtzee Wild",
+        "subtitle": "Clásico juego de dados y tablero",
+        "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts",
+        "excerpt": "¡Juega a Yahtzee! con familiares y amigos tal como lo recuerdas. Compite por la puntuación más alta de Yahtzee en una tabla de clasificación en tiempo real mientras tiras los dados en una serie de rondas cronometradas.",
+        "content": "<0>En Yahtzee Wild, podrás competir con hasta 11 jugadores por conseguir la máxima puntuación en Yahtzee. Los jugadores dispondrán de 13 rondas para lanzar 5 dados y crear manos 'tipo póquer'. En cada ronda, los jugadores tendrán 3 tiradas para intentar maximizar su valor en puntos. En cada tirada, podrán elegir entre conservar o volver a tirar cualquiera de sus 5 dados. Conserva estratégicamente los dados para crear 3 de una clase, 4 de una clase, full, o incluso ir a por todas y conseguir el escurridizo 5 de una clase Yahtzee! Los jugadores registrarán su progreso general en la hoja de puntuaciones. Una vez completadas las 13 rondas, todos los jugadores compararán sus hojas de puntuación para ver quién ha conseguido más puntos y reclamar el primer puesto de la clasificación.</1></1>Yahtzee Wild introduce la posibilidad de usar 'Dados Salvajes'. Los jugadores pueden sustituir cualquier dado de la ronda por un 'Dado Salvaje'. Estos poderosos dados comodín se pueden utilizar con cualquier número. Usa estratégicamente estos dados para completar manos específicas y maximizar tus puntos. Los jugadores registrados en Pogo podrán ganar Monedas Zee por jugar, lo que les permitirá comprar y utilizar Dados Comodín. Si los jugadores se sienten generosos, podrán regalar un</0>"
+      },
+      "scrabble": {
+        "title": "Scrabble",
+        "subtitle": "Un juego de crucigramas clásico",
+        "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
+        "excerpt": "¡Pon tus letras en juego con SCRABBLE online gratis! Juega solo o desafía a tus amigos en este clásico juego de palabras online gratuito.",
+        "content": "<0>¡Juega gratis al SCRABBLE en línea en Pogo™! Practica tus habilidades contra oponentes del ordenador, o crea una partida de SCRABBLE con tu familia y amigos. Incluso puedes enfrentarte a otros jugadores de Pogo™, emparejados con tu nivel de habilidad. ¡Los usuarios gratuitos y los miembros del Club Pogo también tienen acceso a otros divertidos modos de juego!</1></1>En el juego clásico de SCRABBLE, te turnas para crear palabras en el tablero de juego utilizando letras de tu bandeja. Cada letra vale una cierta cantidad de puntos, que contribuyen a la puntuación total de tu palabra.</1></1>Utiliza el tablero a tu favor colocando palabras en una o más casillas premium, como 'Puntuación doble de letra' o 'Puntuación triple de palabra'. ¡Convierte hasta la más humilde de las palabras en una gran ganadora!</0>"
+      },
+      "touch-the-coin": {
+        "title": "Touch the Coin",
+        "subtitle": "Juego Hyper casual para dispositivos móviles",
+        "description": "Videojuego de carácter personal desarrollado con PhaserJS y desplegado en dispositivos móviles",
+        "excerpt": "Persigue monedas con un simple toque. Gana tiempo extra, crea combos y disfruta de partidas rápidas y adictivas en cualquier momento.",
+        "content": "<0>'Touch the Coin' es un juego del género Hypercasual que te desafía a alcanzar monedas con la bola que controlas. La mecánica es sencilla: con simples toques en la pantalla, puedes cambiar la dirección de la bola. Cada vez que alcanzas una moneda, ganas tiempo adicional. ¡Enlázalas rápidamente para desencadenar combos y obtener tiempo extra!</1></1>Este juego es altamente adictivo y perfecto para partidas rápidas en cualquier momento y lugar.</0>"
+      },
+      "pet-balls": {
+        "title": "Pet Balls",
+        "subtitle": "Domina la física con estos pets redondos",
+        "description": "Videojuego de carácter personal desarrollado con Cocos Creator",
+        "excerpt": "Pet Balls es un proyecto concebido con el propósito de explorar y poner a prueba las capacidades del motor Cocos Creator.",
+        "content": "<0>Pet Balls es un proyecto de juego diseñado con el propósito principal de poner a prueba y evaluar el rendimiento del motor Cocos Creator, específicamente la versión 2.3.3. El juego se caracteriza por su enfoque en mecánicas simples basadas en física, aprovechando el motor de física Box2D, el cual ha sido adaptado y personalizado para integrarse de manera óptima con el entorno de Cocos Creator.</1></1>Este juego ofrece una experiencia diversa con un total de 15 niveles, distribuidos en 5 tipos de minijuegos y 3 niveles de dificultad. En otras palabras, se presentan tres niveles de creciente complejidad para cada uno de los 5 'pets' que los jugadores pueden controlar.</1></1>Los 'pets' son criaturas animadas con forma circular que interactúan con su entorno a través de colisiones. Estos 5 tipos de 'pets' incluyen al pájaro, al pez, al pulpo, al mono y a la rana, cada uno con mecánicas únicas que desafían a los jugadores a completar los niveles de manera creativa y estratégica.</0>"
+      },
+      "mix-ball": {
+        "title": "Mix Ball",
+        "subtitle": "Proyecto basado en físicas con PhaserJS",
+        "description": "Videojuego de carácter personal desarrollado con PhaserJS",
+        "excerpt": "Toma el control de una bola única y navega a través de colisiones estratégicas con los tiles verdes para avanzar. Pero cuidado, otros tiles pueden agregar desafíos inesperados en tu travesía.",
+        "content": "<0>Mix Ball es un juego casual desarrollado utilizando el framework PhaserJS, creado con el propósito de explorar y poner a prueba esta tecnología para comprender su potencial y capacidades.</1></1>El juego se caracteriza por ofrecer niveles simples y de resolución rápida, donde los jugadores asumen el control de una bola con atributos específicos que la diferencian de otras bolas presentes en el juego. El objetivo es guiar la bola hacia el final del nivel mediante colisiones con los tiles verdes en el escenario. Sin embargo, es importante tener precaución al interactuar con los demás tiles y sus atributos, ya que pueden presentar desafíos adicionales en la travesía.</0>"
+      },
+      "haciendo-campana": {
+        "title": "Haciendo Campaña",
+        "subtitle": "Juego para la CPCRetroDev",
+        "description": "Videojuego de carácter personal desarrollado en C++ para el microordenador Amstrad CPC 464",
+        "excerpt": "Enfrentamientos multijugador, donde dos personajes, compiten por la dominación de zonas estratégicas del escenario. Conquista las pancartas estratégicamente ubicadas para asegurarte la victoria en un escenario lleno de obstáculos y objetos que influirán en tu desempeño en la campaña.",
+        "content": "<0>'Haciendo Campaña' es un videojuego de estrategia en tiempo real diseñado para la plataforma Amstrad CPC 464, con un enfoque especial en la jugabilidad multijugador.</1></1>El juego ofrece emocionantes partidas rápidas donde dos personajes, ya sea controlados por jugadores o por una inteligencia artificial (CPU), se enfrentan en la batalla por conquistar las distintas zonas disponibles en el escenario. Al finalizar el tiempo de la partida, el jugador que haya logrado conquistar la mayor cantidad de zonas (identificadas mediante pancartas colocadas estratégicamente) se corona como el vencedor.</1></1>El escenario está diseñado con obstáculos y objetos que influyen en la jugabilidad, lo que requiere de estrategia y habilidad para asegurar la victoria en la campaña. El juego cuenta con un modo multijugador, lo que lo hace ideal para desafiar a tus amigos en emocionantes enfrentamientos. También puedes enfrentarte a la CPU en un emocionante modo para un jugador.</0>"
+      },
+      "prisionero":
+      {
+        "title": "Prisionero",
+        "subtitle": "Libertad a través de la reputación en Prisionero.",
+        "description": "Videojuego de carácter personal desarrollado con C++ y SFML.",
+        "excerpt": "Controla al prisionero y usa la reputación de los personajes para escapar de salas desafiantes. Tu astucia es clave para abrir la puerta hacia el siguiente nivel. ¿Estás listo para el desafío?",
+        "content": "<0>Prisionero es un prototipo de juego de puzles que ha sido diseñado con el propósito de implementar y poner a prueba diversos algoritmos de Inteligencia Artificial.</1></1>En este juego, te embarcarás en la emocionante misión de escapar de cada sala que se presenta ante el prisionero, al cual controlarás como jugador principal. Utiliza la reputación de los personajes para superar desafiantes obstáculos y abrir la puerta que te conducirá al siguiente nivel.</0>"
+      }
+    }
+  }
+}
