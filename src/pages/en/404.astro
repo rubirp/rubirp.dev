@@ -1,5 +1,6 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 changeLanguage("en");
@@ -7,14 +8,14 @@ changeLanguage("en");
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title = "404: No encontrado" includeSidebar={false}>
+<BaseLayout title={t("404.title")} description={t("404.description")} includeSidebar={false}>
   <div class="text-center">
     <h1 class="text-9xl font-bold mb-4">🏝</h1>
     <h1 class="text-9xl font-bold mb-2">404</h1>
-    <h3 class="text-2xl">La página que estás buscando no se ha podido encontrar.</h3>
-    <h3 class="text-2xl mt-9">Te puede interesar:</h3>
-    <a class="btn btn-accent m-2" href={baseUrl}>Inicio</a>
-    <a class="btn btn-accent m-2" href={baseUrl + "/projects"}>Proyectos</a>
-    <a class="btn btn-accent m-2" href={baseUrl + "/cv"}>CV</a>
+    <h3 class="text-2xl">{t("404.title")}</h3>
+    <h3 class="text-2xl mt-9">{t("404.t1")}</h3>
+    <a class="btn btn-accent m-2" href={localizePath("/")}>{t("404.b1")}</a>
+    <a class="btn btn-accent m-2" href={localizePath("/projects")}>{t("404.b2")}</a>
+    <a class="btn btn-accent m-2" href={localizePath("/cv")}>{t("404.b3")}</a>
   </div>
 </BaseLayout>

@@ -34,17 +34,15 @@ const initialTheme = "light";
             <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
             <div class="drawer-content bg-base-100">
-
                 {includeSidebar && <Header title={title} />}
 
                 <div class="md:flex md:justify-center">
-                    <main class="p-6 pt-10 lg:max-w-[900px] lg:min-w-[900px] max-w-[100vw] min-w-[100vw]">
+                    <main class="p-6 pt-10 lg:max-w-[900px] lg:min-w-[720px] max-w-[100vw] min-w-[100vw]">
                       <slot />
                     </main>
                 </div>
-
+                
                 <!-- <Footer /> -->
-
             </div>
 
             {includeSidebar && <Sidebar sideBarActiveItemID={sideBarActiveItemID} />}

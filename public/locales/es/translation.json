@@ -125,6 +125,15 @@
     "skill-4": "Proactividad",
     "skill-5": "Autogestión"
   },
+  "404":
+  {
+    "title": "Página no encontrada",
+    "description": "Error 404: Página no encontrada",
+    "t1": "La página que estás buscando no se ha podido encontrar.",
+    "b1": "Inicio",
+    "b2": "Proyectos",
+    "b3": "CV"
+  },
   "content": {
     "projects": {
       "risk": {

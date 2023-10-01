@@ -125,6 +125,15 @@
     "skill-4": "Proactiveness",
     "skill-5": "Self-management"
   },
+  "404":
+  {
+    "title": "Page Not Found",
+    "description": "Error 404: Page Not Found",
+    "t1": "The page you're looking for couldn't be found.",
+    "b1": "Home",
+    "b2": "Projects",
+    "b3": "CV"
+  },
   "content": {
     "projects": {
       "risk": {

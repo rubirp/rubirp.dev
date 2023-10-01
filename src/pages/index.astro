@@ -1,4 +1,5 @@
 ---
+import { localizePath } from "astro-i18next";
 import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { getCollection } from "astro:content";
@@ -7,7 +8,6 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 changeLanguage("es");
 
-const baseUrl = import.meta.env.BASE_URL;
 const personal_projects = await getCollection("projects", ({ data }) => {
     return data.category === "personal";
 });
@@ -25,6 +25,7 @@ professional_projects.sort((a, b) => {
 ---
 
 <BaseLayout title={t("home.title")} description={t("home.description")} sideBarActiveItemID="home">
+
 	<div class="pb-12">
 		<h2 class="text-xl py-1">{t("home.intro-t1")}</h2>
 		<h1 class="text-5xl font-bold">{t("home.intro-t2")}</h1>
@@ -36,8 +37,8 @@ professional_projects.sort((a, b) => {
 				<b></b>
 				<u></u>
 				<a href="https://frasquitogames.com/" target="_blank"></a>
-				<a href={baseUrl + "/cv"}></a>
-				<a href={baseUrl + "/projects"}></a>
+				<a href={localizePath("/cv")}></a>
+				<a href={localizePath("/projects")}></a>
 			</Trans>
 
 			<div class="mt-8">
@@ -47,6 +48,7 @@ professional_projects.sort((a, b) => {
 		</div>
 	</div>
 
+	
 	<Trans i18nKey="home.projects-pro-t">
 		<h2 class="text-3xl w-full font-bold mb-2"></h2>
 		<u></u>
@@ -60,7 +62,7 @@ professional_projects.sort((a, b) => {
 				title={project.data.title}
 				excerpt={project.data.excerpt}
 				img={project.data.thumbnail}
-				url={baseUrl + "/projects/" + project.slug}
+				url={localizePath("/projects/" + project.slug)}
 				category = {project.data.category}
 				tags = {project.data.tags}
 			/>
@@ -74,18 +76,18 @@ professional_projects.sort((a, b) => {
 		<a href="https://frasquitogames.com/" target="_blank"></a>
 	</Trans>
 
-	  	<ul>
-		{
-			personal_projects.map((project) => (
-				<HorizontalCard
-					title={project.data.title}
-					excerpt={project.data.excerpt}
-					img={project.data.thumbnail}
-					url={baseUrl + "/projects/" + project.slug}
-					category = {project.data.category}
-					tags = {project.data.tags}
-				/>
-			)) 
-		}
-		</ul>
+	<ul>
+	{
+		personal_projects.map((project) => (
+			<HorizontalCard
+				title={project.data.title}
+				excerpt={project.data.excerpt}
+				img={project.data.thumbnail}
+				url={localizePath("/projects/" + project.slug)}
+				category = {project.data.category}
+				tags = {project.data.tags}
+			/>
+		)) 
+	}
+	</ul>
 </BaseLayout>

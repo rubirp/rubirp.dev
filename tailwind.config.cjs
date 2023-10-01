@@ -2,7 +2,12 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/flowbite/**/*.js'],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				'custombp': {'raw': '(max-height: 900px)'}
+			}
+		},
+		
 	},
 	plugins: [require("daisyui"), require('flowbite/plugin')],
 	daisyui: {
