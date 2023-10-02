@@ -23,8 +23,8 @@ changeLanguage("es");
 //const englishDocsEntries = await getCollection('projects', ({ id }) => {
 //  return id.startsWith('en/');
 //});
-//const baseUrl = import.meta.env.BASE_URL;
-const baseUrl = '';
+
+
 const projects = await getCollection("projects", ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
 });
@@ -57,7 +57,7 @@ projects.sort((a, b) => {
                 title={project.data.title}
                 excerpt={project.data.excerpt}
                 img={project.data.thumbnail}
-                url={baseUrl + "/projects/" + project.slug}
+                url={"/projects/" + project.slug}
                 category = {project.data.category}
                 tags = {project.data.tags}
             />

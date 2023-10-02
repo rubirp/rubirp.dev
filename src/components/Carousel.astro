@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets";
-
-//const baseUrl = import.meta.env.BASE_URL;
-const baseUrl = '';
 const {media} = Astro.props;
 ---
 
@@ -12,7 +9,7 @@ const {media} = Astro.props;
     {
       media.map((item:{url: string, alt: string, type?: string, origin?: string}) =>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <Image src={baseUrl+item.url} alt={item.alt} format="webp" width="720" height="396" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
+          <Image src={item.url} alt={item.alt} format="webp" width="720" height="396" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
         </div>
       )
     }

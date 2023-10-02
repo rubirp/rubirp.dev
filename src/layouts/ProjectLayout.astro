@@ -6,10 +6,6 @@ import BaseLayout from "./BaseLayout.astro";
 import Category from "../components/Category.astro";
 import Carousel from "../components/Carousel.astro";
 
-//const baseUrl = import.meta.env.BASE_URL;
-const baseUrl = '';
-
-
 const { title, description, subtitle, category, content, main_media, media, links, tags} = Astro.props;
 
 ---
@@ -18,7 +14,7 @@ const { title, description, subtitle, category, content, main_media, media, link
   <div class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {
-        main_media && <Image width="750" height="422" format="webp" src={baseUrl + main_media.url} alt={main_media.alt} class="w-full mb-6"/>
+        main_media && <Image width="750" height="422" format="webp" src={main_media.url} alt={main_media.alt} class="w-full mb-6"/>
         || 
         media && <Carousel media={media} />
       }

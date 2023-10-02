@@ -3,8 +3,6 @@ import { t } from "i18next";
 import { Image } from "astro:assets";
 import Category from "./Category.astro";
 const { title, img, excerpt, url, category, tags } = Astro.props;
-//const baseUrl = import.meta.env.BASE_URL;
-const baseUrl = '';
 ---
 
 <div class={category+"-category rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"}>
@@ -12,7 +10,7 @@ const baseUrl = '';
     
     <div class="hero-content flex-col md:flex-row">
         {
-            img && <Image src={baseUrl + img} width="750"  height="422" format="webp" alt={title} class="max-w-full md:max-w-[13rem] rounded-lg"/>
+            img && <Image src={img} width="750"  height="422" format="webp" alt={title} class="max-w-full md:max-w-[13rem] rounded-lg"/>
         }
         <div class="grow w-full">
             <div class="flex">

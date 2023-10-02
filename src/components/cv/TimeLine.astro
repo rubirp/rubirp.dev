@@ -4,8 +4,6 @@ import { localizePath } from "astro-i18next";
 import { Image } from "astro:assets";
 import Carousel from "../Carousel.astro";
 const { title, subtitle, description, projects } = Astro.props;
-//const baseUrl = import.meta.env.BASE_URL;
-const baseUrl = '';
 ---
 
 
@@ -61,7 +59,7 @@ const baseUrl = '';
                       {
                         project.images.length && 
                         (
-                          project.images.length === 1 && <Image src={baseUrl+project.images[0].url} alt={project.images[0].alt} format="webp" width="720" height="396" />
+                          project.images.length === 1 && <Image src={project.images[0].url} alt={project.images[0].alt} format="webp" width="720" height="396" />
                           ||
                           project.images.length > 1 && <Carousel media={project.images} />
                         )
