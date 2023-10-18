@@ -23,7 +23,8 @@
     "visit": "Visitar",
     "project": "Proyecto",
     "play": "Jugar",
-    "download": "Descargar"
+    "download": "Descargar",
+    "curriculum": "Versión PDF"
   },
   "sidebar": {
     "rubi": {
@@ -47,7 +48,7 @@
     "intro-t2": "Soy Rubén Rodríguez",
     "intro-t3": "Ingeniero Multimedia y Desarrollador de Videojuegos",
     "intro-d": "<0>Tras finalizar mis estudios en 2017, he estado <1>desarrollando videojuegos</1> tanto de forma independiente como <1>profesionalmente</1>.</0><0>Fundé mi <1>propia marca, <3><2>Frasquito Games</2></3></1>, bajo la cual publico mis juegos y he trabajado en <1>proyectos profesionales</1> para empresas importantes en el <1>sector, como Electronic Arts</1>.</0><0><1>Navega por esta web</1> para obtener más detalles <4><2>sobre mí</2></4> y mis <5><2>proyectos</2></5>.</0>",
-    "intro-btn1": "📩 ¡Contáctame!",
+    "intro-btn1": "📩 Contáctame",
     "projects-pro-t": "<0>Proyectos profesionales (<2><1>Pogo</1></2>, Electronic Arts)</0>",
     "projects-per-t": "<0>Proyectos personales (<2><1>Frasquito Games</1></2>)</0>"
   },

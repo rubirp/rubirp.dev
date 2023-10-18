@@ -23,7 +23,8 @@
     "visit": "Visit",
     "project": "Project",
     "play": "Play",
-    "download": "Download"
+    "download": "Download",
+    "curriculum": "PDF Version"
   },
   "sidebar": {
     "rubi": {
@@ -47,7 +48,7 @@
     "intro-t2": "I'm Ruben Rodriguez",
     "intro-t3": "Multimedia Engineer and Game Developer",
     "intro-d": "<0>After completing my studies in 2017, I have been <1>developing video games</1> both independently and <1>professionally</1>.</0><0>I founded my <1>own brand, <3><2>Frasquito Games</2></3></1>, under which I publish my games and have worked on <1>professional projects</1> for major companies in the <1>industry, such as Electronic Arts</1>.</0><0><1>Explore this website</1> to get more details <4><2>about me</2></4> and my <5><2>projects</2></5>.</0>",
-    "intro-btn1": "📩 Contact me!",
+    "intro-btn1": "📩 Contact me",
     "projects-pro-t": "<0>Professional projects (<2><1>Pogo</1></2>, Electronic Arts)</0>",
     "projects-per-t": "<0>Personal projects (<2><1>Frasquito Games</1></2>)</0>"
   },

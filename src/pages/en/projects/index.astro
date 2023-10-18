@@ -23,8 +23,6 @@ changeLanguage("en");
 //const englishDocsEntries = await getCollection('projects', ({ id }) => {
 //  return id.startsWith('en/');
 //});
-
-
 const projects = await getCollection("projects", ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
 });

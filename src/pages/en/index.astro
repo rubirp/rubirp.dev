@@ -1,22 +1,24 @@
 ---
 import { localizePath } from "astro-i18next";
-import { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
+import TimeLineElement from "../../components/cv/TimeLine.astro";
 
 changeLanguage("en");
 
+const isSpanish = i18next.language === "es";
 const personal_projects = await getCollection("projects", ({ data }) => {
-    return data.category === "personal";
+    return data.category === "personal" && (import.meta.env.PROD ? data.draft !== true : true);
 });
 personal_projects.sort((a, b) => {
     //@ts-ignore
     return a.data.priority - b.data.priority;
 });
 const professional_projects = await getCollection("projects", ({ data }) => {
-    return data.category === "professional";
+    return data.category === "professional" && (import.meta.env.PROD ? data.draft !== true : true);
 });
 professional_projects.sort((a, b) => {
     //@ts-ignore
@@ -26,7 +28,7 @@ professional_projects.sort((a, b) => {
 
 <BaseLayout title={t("home.title")} description={t("home.description")} sideBarActiveItemID="home">
 
-	<div class="pb-12">
+	<div class="pb-10">
 		<h2 class="text-xl py-1">{t("home.intro-t1")}</h2>
 		<h1 class="text-5xl font-bold">{t("home.intro-t2")}</h1>
 		<h2 class="text-3xl py-3 font-bold">{t("home.intro-t3")}</h2>
@@ -41,12 +43,32 @@ professional_projects.sort((a, b) => {
 				<a href={localizePath("/projects")}></a>
 			</Trans>
 
-			<div class="mt-8">
-				<a class="btn" href="mailto:contact.rubi_almansa@hotmail.com" target="_blank" referrerpolicy="no-referrer-when-downgrade">{t("home.intro-btn1")}</a>
-		  	</div>
+			<div class="mt-8 flex gap-3">
+				<a class="whitespace-nowrap bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="mailto:contact.rubi_almansa@hotmail.com" target="_blank" referrerpolicy="no-referrer-when-downgrade">{t("home.intro-btn1")}</a>
+				<a class="whitespace-nowrap bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href={isSpanish ? "/docs/cv-es.pdf" : "/docs/cv-en.pdf"} target="_blank" >
+					<span>📄CV</span>
+					<svg class="w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
+				  </a>
+			</div>
 			
 		</div>
 	</div>
+
+	<div class="mb-5">
+		<h2 class="text-3xl w-full font-bold">{t("cv.experience-t")}</h2>
+	</div>
+
+	<div class="time-line-container pb-10">
+		<TimeLineElement
+		  title={t("cv.projects.pro.title")}
+		  subtitle={t("cv.projects.pro.subtitle")}
+		/>
+	
+		<TimeLineElement
+		title={t("cv.projects.per.title")}
+		subtitle={t("cv.projects.per.subtitle")}
+		/>
+	  </div>
 
 	
 	<Trans i18nKey="home.projects-pro-t">
