@@ -18,8 +18,8 @@ media: [
     {type: 'image', url: '/images/pet-balls/5.png', origin: 'local', alt: 'Pet Balls imagen 5'}
 ]
 links: [
-    {url: 'https://frasquitogames.com/pet-balls-test-del-motor-cocos-creator', value: 'Visitar'},
-    {url: 'https://frasquitogames.itch.io/pet-balls', value: 'Jugar'}
+    {url: 'https://frasquitogames.com/pet-balls-test-del-motor-cocos-creator', value: 'links.visit'},
+    {url: 'https://frasquitogames.itch.io/pet-balls',value: 'links.play'}
 ]
 
 priority: 5
