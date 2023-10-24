@@ -16,6 +16,6 @@ media: [
     {type: 'image', url: '/images/prisionero/2.png', origin: 'local', alt: 'Prisionero imagen 3'},
 ]
 links: [
-    {url: 'https://frasquitogames.com/prisionero-prototipo-que-implementa-ia', value: 'links.visit'}
+    {url: 'https://frasquitogames.com', value: 'links.visit'}
 ]
 ---

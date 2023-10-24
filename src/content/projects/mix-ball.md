@@ -18,7 +18,7 @@ media: [
     {type: 'image', url: '/images/mix-ball/5.png', origin: 'local', alt: 'Mix Ball imagen 5'}
 ]
 links: [
-    {url: 'https://frasquitogames.com/mix-ball-juego-casual-con-phaserjs', value: 'links.visit'},
+    {url: 'https://frasquitogames.com', value: 'links.visit'},
     {url: 'https://frasquitogames.itch.io/mix-ball', value: 'links.play'}
 ]
 

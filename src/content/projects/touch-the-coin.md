@@ -17,7 +17,7 @@ media: [
     {type: 'image', url: '/images/touch-the-coin/3.png', origin: 'local', alt: 'Touch the Coin imagen 4'},
 ]
 links: [
-    {url: 'https://frasquitogames.com/touch-the-coin-juego/', value: 'links.visit'},
+    {url: 'https://frasquitogames.com', value: 'links.visit'},
     {url: 'https://frasquitogames.itch.io/touch-the-coin', value: 'links.play'}
 ]
 
