@@ -7,7 +7,7 @@ excerpt: 'content.projects.touch-the-coin.excerpt'
 category: 'personal'
 
 content: 'content.projects.touch-the-coin.content'
-tags: ['tags.cocos', 'tags.typescript', 'tags.javascript']
+tags: ['tags.phaser', 'tags.typescript', 'tags.javascript']
 thumbnail: '/images/touch-the-coin/0.png'
 #main_media: {type: 'image', url: '/images/touch-the-coin/0.png', origin: 'local', alt: 'Touch the Coin imagen principal'}
 media: [

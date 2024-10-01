@@ -13,7 +13,8 @@
     "typescript": "TypeScript",
     "html": "HTML",
     "css": "CSS",
-    "multiplayer": "Multiplayer"
+    "multiplayer": "Multiplayer",
+    "slots": "Slots"
   },
   "categories": {
     "professional": "Professional",
@@ -70,9 +71,18 @@
     "experience-t": "Experience",
     "projects": {
       "pro": {
-        "title": "Monti Games | Game Developer | Pogo, Electronic Arts",
-        "subtitle": "From 05/2021 to 08/2023 at Monti Games, Elche, Spain",
-        "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used.",
+        "exp": {
+          "0":{
+            "title": "Monti Games | Game Developer | Pogo, Electronic Arts",
+            "subtitle": "From 05/2021 to 08/2023 at Monti Games, Elche, Spain",
+            "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used."
+          },
+          "1":{
+            "title": "Magic Media | Game Developer | Pogo, Electronic Arts",
+            "subtitle": "From 12/2023 to 09/2024 at Magic Media, Remote work",
+            "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used."
+          }
+        },
         "0": {
           "title": "Risk: Pogo Domination",
           "subtitle": "Third project, refactoring and performance improvement",
