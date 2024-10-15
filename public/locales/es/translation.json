@@ -67,7 +67,7 @@
     "title": "CV",
     "description": "Página de CV y experiencia de Rubén Rodríguez Pardo.",
     "summary-t": "Perfil",
-    "summary-d": "Mi nombre es Rubén Rodríguez Pardo. En 2017, me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.</0></0>Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso, fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.</0></0>Unos años más tarde, consideré oportuno dar el salto al mundo profesional como desarrollador de videojuegos. Fui contratado por un estudio español llamado Monti Games, que ofrecía servicios de desarrollo de videojuegos para terceros. Durante dos años y medio, trabajé como desarrollador, colaborando con empresas punteras en el sector, como Electronic Arts.",
+    "summary-d": "Mi nombre es Rubén Rodríguez Pardo. En 2017, me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.</0></0>Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso, fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.</0></0>Unos años más tarde, consideré oportuno dar el salto al mundo profesional. Durante más de tres años y medio, he trabajado como desarrollador de videojuegos en empresas como Magic Media y Monti Games, llevando a cabo proyectos para terceros y colaborando con compañías líderes del sector, como Electronic Arts.",
     "experience-t": "Experiencia",
     "projects": {
       "pro": {
@@ -94,11 +94,11 @@
         "magic-media":{
           "title": "Magic Media | Desarrollador de videojuegos | Pogo, Electronic Arts",
           "subtitle": "Desde 12/2023 hasta 09/2024 en Magic Media, Teletrabajo",
-          "description": "Durante esta etapa, colaboramos directamente con la rama de Pogo (Electronic Arts), una plataforma web dedicada a servir videojuegos de corte casual. Formé parte del equipo de ingeniería dedicado exclusivamente al desarrollo y mantenimiento de videojuegos. También realicé tareas de desarrollo de herramientas generales, como actualizaciones de frameworks y SDKs utilizados.",
+          "description": "Durante esta etapa, tuve la oportunidad de trabajar para una gran empresa junto a un equipo completo de profesionales con distintos roles (diseñadores, artistas, desarrolladores, etc.) con el objetivo de desarrollar un proyecto para la plataforma de Pogo. No solo trabajé en el desarrollo del videojuego, sino que también trabajé en herramientas de soporte, como el simulador de balanceo del juego.",
           "0": {
             "title": "Pogo Slots",
             "subtitle": "Expansion, rediseño y nuevo videojuego",
-            "description": "TODO Lorem..."
+            "description": "Fue mi primera experiencia trabajando con juegos de tipo slots. Expandimos el videojuego con un nuevo título, realzamos el lobby, mejoramos la experiencia del usuario y ampliamos el contenido."
           }
         }
       },
@@ -152,10 +152,10 @@
     "projects": {
       "slots": {
         "title": "Pogo Slots",
-        "subtitle": "Subtitle",
+        "subtitle": "Recompensas sin fin en las máquinas únicas de Pogo Slots",
         "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
         "excerpt": "¡Gana en grande con Pogo Slots! Elige tu diversión con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant. ¡Gira, completa tarjetas de misión y gana, gana, gana!",
-        "content": "<0>Experimenta la emoción de ganar con Pogo Slots. Nuestro juego cuenta con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant, cada una con una jugabilidad cautivadora. Completa misiones llenas de diversión para obtener recompensas y aprovecha los potenciadores para ganar aún más. ¡Con Pogo Slots, cada jugador es un ganador!</1>¡Colecciona recompensas cada hora, todos los días, en el Lobby! Relájate y revisa todas tus ganancias antes de lanzarte al mundo de nuestras máquinas tragamonedas únicas:</1>Experimenta el misterio de La Purrámide del Nilo, una máquina tragamonedas que te lleva por el enigmático mundo del antiguo Egipto, prometiendo emocionantes recompensas en cada giro. Encuentra significado y ganancias en los innumerables jeroglíficos y líneas de pago.</1>Disfruta de la pacífica atmósfera de El Jardín de Grant, un paraíso de tragamonedas que te inunda con abundantes premios en un ambiente sereno de jardín. Con los pagos en estilo de coincidencias del Jardín de Grant, ¡las ganancias nunca paran! Cada vez que ganas, más símbolos caen para mantener las combinaciones ganadoras. ¿Podrás conseguir la esquiva combinación de Triple Flor?</1>Este juego de casino en línea está disponible para todos los jugadores, sin necesidad de registro, y ofrece giros gratis para que nunca te aburras.</0>"
+        "content": "<0>Experimenta la emoción de ganar con Pogo Slots. Nuestro juego cuenta con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant, cada una con una jugabilidad cautivadora. Completa misiones llenas de diversión para obtener recompensas y aprovecha los potenciadores para ganar aún más. ¡Con Pogo Slots, cada jugador es un ganador!</1></1>¡Colecciona recompensas cada hora, todos los días, en el Lobby! Relájate y revisa todas tus ganancias antes de lanzarte al mundo de nuestras máquinas tragamonedas únicas:</1></1>Experimenta el misterio de La Purrámide del Nilo, una máquina tragamonedas que te lleva por el enigmático mundo del antiguo Egipto, prometiendo emocionantes recompensas en cada giro. Encuentra significado y ganancias en los innumerables jeroglíficos y líneas de pago.</1></1>Disfruta de la pacífica atmósfera de El Jardín de Grant, un paraíso de tragamonedas que te inunda con abundantes premios en un ambiente sereno de jardín. Con los pagos en estilo de coincidencias del Jardín de Grant, ¡las ganancias nunca paran! Cada vez que ganas, más símbolos caen para mantener las combinaciones ganadoras. ¿Podrás conseguir la esquiva combinación de Triple Flor?</1></1>Este juego de casino en línea está disponible para todos los jugadores, sin necesidad de registro, y ofrece giros gratis para que nunca te aburras.</0>"
       },
       "risk": {
         "title": "Risk Pogo Domination",

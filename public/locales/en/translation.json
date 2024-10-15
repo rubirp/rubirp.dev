@@ -67,37 +67,41 @@
     "title": "CV",
     "description": "CV and experience page of Ruben Rodriguez Pardo.",
     "summary-t": "Profile",
-    "summary-d": "My name is Ruben Rodriguez Pardo. In 2017, I graduated as a Multimedia Engineer from the University of Alicante, Spain.</0></0>After graduating, I decided to enhance my skills as a game developer. In this process, I founded my own brand, Frasquito Games, under which I publish independently developed projects.</0></0>A few years later, I decided to make the transition into the professional world as a game developer. I was hired by a Spanish studio called Monti Games, which provided game development services for third parties. For two and a half years, I worked as a developer, collaborating with leading companies in the industry, such as Electronic Arts.",
+    "summary-d": "My name is Ruben Rodriguez Pardo. In 2017, I graduated as a Multimedia Engineer from the University of Alicante, Spain.</0></0>After graduating, I decided to enhance my skills as a game developer. In this process, I founded my own brand, Frasquito Games, under which I publish independently developed projects.</0></0>A few years later, I deemed it the right time to take the leap into the professional world. For more than three and a half years, I have worked as a video game developer at companies like Magic Media and Monti Games, carrying out projects for third parties and collaborating with leading companies in the industry, such as Electronic Arts.",
     "experience-t": "Experience",
     "projects": {
       "pro": {
-        "exp": {
-          "0":{
-            "title": "Monti Games | Game Developer | Pogo, Electronic Arts",
-            "subtitle": "From 05/2021 to 08/2023 at Monti Games, Elche, Spain",
-            "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used."
-          },
-          "1":{
-            "title": "Magic Media | Game Developer | Pogo, Electronic Arts",
-            "subtitle": "From 12/2023 to 09/2024 at Magic Media, Remote work",
-            "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used."
-          }
-        },
-        "0": {
+        "monti-games": {
+          "title": "Monti Games | Game Developer | Pogo, Electronic Arts",
+          "subtitle": "From 05/2021 to 08/2023 at Monti Games, Elche, Spain",
+          "description": "During this stage, I had the opportunity to work for a large company alongside a complete team of professionals in various roles (designers, artists, developers, etc.) with the goal of developing a project for the Pogo platform. Not only did I work on developing the video game, but I also worked on support tools, such as the game balancing simulator.",
+          "0": {
           "title": "Risk: Pogo Domination",
           "subtitle": "Third project, refactoring and performance improvement",
           "description": "We conducted a complete refactoring of the project with the goal of improving its performance and ease of maintenance. We implemented new features, migrated client logic to the server side, improved player synchronization, allowed restoring game states after abandonment, and fixed bugs."
+          },
+          "1": {
+            "title": "Yahtzee: Wild!",
+            "subtitle": "Second project, development from scratch",
+            "description": "We developed this game from scratch, and I was involved in various tasks during development, including client and server logic and mechanics, game state restoration, matchmaking, rewards, FTUE, performance improvements, and bug fixes, among others."
+          },
+          "2": {
+            "title": "Scrabble: Crossword Game",
+            "subtitle": "First project, rebranding and maintenance",
+            "description": "It was my first project, and I joined it at an advanced stage of development. It involved a graphical and mechanical update of an existing game on the platform. My main focus was on providing support, primarily on the client side. This experience helped me become familiar with the team's working methodology and the frameworks used."
+          }
         },
-        "1": {
-          "title": "Yahtzee: Wild!",
-          "subtitle": "Second project, development from scratch",
-          "description": "We developed this game from scratch, and I was involved in various tasks during development, including client and server logic and mechanics, game state restoration, matchmaking, rewards, FTUE, performance improvements, and bug fixes, among others."
-        },
-        "2": {
-          "title": "Scrabble: Crossword Game",
-          "subtitle": "First project, rebranding and maintenance",
-          "description": "It was my first project, and I joined it at an advanced stage of development. It involved a graphical and mechanical update of an existing game on the platform. My main focus was on providing support, primarily on the client side. This experience helped me become familiar with the team's working methodology and the frameworks used."
+        "magic-media":{
+          "title": "Magic Media | Game Developer | Pogo, Electronic Arts",
+            "subtitle": "From 12/2023 to 09/2024 at Magic Media, Remote work",
+            "description": "During this period, we worked directly with the Pogo branch (Electronic Arts), a web platform dedicated to serving casual games. I was part of the engineering team dedicated exclusively to game development and maintenance. I also worked on the development of general-purpose tools, such as updates to the frameworks and SDKs used.",
+          "0": {
+            "title": "Pogo Slots",
+            "subtitle": "Expansion, redesign, and new video game",
+            "description": "It was my first experience working with slot-type games. We expanded the video game with a new title, enhanced the lobby, improved the user experience, and broadened the content."
+          }
         }
+        
       },
       "per": {
         "title": "Frasquito Games | Game Developer | Independent Projects",
@@ -147,6 +151,13 @@
   },
   "content": {
     "projects": {
+      "slots": {
+        "title": "Pogo Slots",
+        "subtitle": "Endless rewards in the unique machines of Pogo Slots",
+        "description": "Professional game developed in Cocos Creator for the Pogo platform by Electronic Arts.",
+        "excerpt": "Win big with Pogo Slots! Choose your fun with two unique slot machines: Nile's Purramid and Grant's Garden. Spin, fill quest cards, and win, win, win!",
+        "content": "<0>Experience the thrill of winning with Pogo Slots. Our game features two unique slot machines, Nile's Purramid and Grant's Garden, each with its own captivating gameplay. Complete fun-filled quests for rewards and leverage the powerups to win even more. With Pogo Slots, every player is a winner!</1></1>Collect rewards every hour of every day in the Lobby! Relax and take stock of all your earnings before you jump into the world of either of our unique slot machines:</1></1>Experience the mystique of Nile's Purramid, a slot machine that takes you through the enigmatic world of ancient Egypt, promising thrilling rewards at every spin. Find meaning and winnings in the myriad hieroglyphs and paylines.</1></1>Indulge in the peaceful ambiance of Grant's Garden, a slots paradise that showers you with bountiful winnings amidst a serene garden setting. With Grant’s Garden’s match style payouts–winning never stops–each time you win, more symbols drop down to keep the winning combos going! Can you get the elusive Triple Blossom combo?</1></1>This online casino game is available to all players, no registration required, and offers free spins so you'll never get bored!</0>"
+      },
       "risk": {
         "title": "Risk Pogo Domination",
         "subtitle": "Conquer territories and dominate the world",
