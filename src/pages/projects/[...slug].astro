@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import { type CollectionEntry, getCollection } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 
@@ -22,7 +22,7 @@ const { Content } = await project.render();
 ---
 
 <ProjectLayout 
-    title={data.title} 
+    title={t(data.title)} 
     description={data.description} 
     subtitle={data.subtitle}
     category={data.category} 

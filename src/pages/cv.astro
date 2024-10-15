@@ -33,31 +33,48 @@ const isSpanish = i18next.language === "es";
   </div>
 
   <div class="time-line-container">
+
     <TimeLineElement
-      title={t("cv.projects.pro.title")}
-      subtitle={t("cv.projects.pro.subtitle")}
-      description={t("cv.projects.pro.description")}
+      title={t("cv.projects.pro.magic-media.title")}
+      subtitle={t("cv.projects.pro.magic-media.subtitle")}
+      description={t("cv.projects.pro.magic-media.description")}
       projects={[
         {
-          title: t("cv.projects.pro.0.title"),
-          subtitle: t("cv.projects.pro.0.subtitle"),
-          description: t("cv.projects.pro.0.description"),
+          title: t("cv.projects.pro.magic-media.0.title"),
+          subtitle: t("cv.projects.pro.magic-media.0.subtitle"),
+          description: t("cv.projects.pro.magic-media.0.description"),
+          images: [{url: "/images/slots/3.webp", alt: "Imagen 1"}],
+          slug: "pogo-slots",
+          url: "https://www.pogo.com/games/pogo-slots"
+        }
+      ]}
+    />
+
+    <TimeLineElement
+      title={t("cv.projects.pro.monti-games.title")}
+      subtitle={t("cv.projects.pro.monti-games.subtitle")}
+      description={t("cv.projects.pro.monti-games.description")}
+      projects={[
+        {
+          title: t("cv.projects.pro.monti-games.0.title"),
+          subtitle: t("cv.projects.pro.monti-games.0.subtitle"),
+          description: t("cv.projects.pro.monti-games.0.description"),
           images: [{url: "/images/risk/1.webp", alt: "Imagen 1"}],
           slug: "risk-pogo-domination",
           url: "https://www.pogo.com/games/risk-pogo-domination"
         },
         {
-          title: t("cv.projects.pro.1.title"),
-          subtitle: t("cv.projects.pro.1.subtitle"),
-          description: t("cv.projects.pro.1.description"),
+          title: t("cv.projects.pro.monti-games.1.title"),
+          subtitle: t("cv.projects.pro.monti-games.1.subtitle"),
+          description: t("cv.projects.pro.monti-games.1.description"),
           images: [{url: "/images/yahtzee/1.webp", alt: "Imagen 1"}],
           slug: "yahtzee-wild",
           url: "https://www.pogo.com/games/yahtzee-wild"
         },
         {
-          title: t("cv.projects.pro.2.title"),
-          subtitle: t("cv.projects.pro.2.subtitle"),
-          description: t("cv.projects.pro.2.description"),
+          title: t("cv.projects.pro.monti-games.2.title"),
+          subtitle: t("cv.projects.pro.monti-games.2.subtitle"),
+          description: t("cv.projects.pro.monti-games.2.description"),
           images: [{url: "/images/scrabble/1.webp", alt: "Imagen 1"}],
           slug: "scrabble",
           url: "https://www.pogo.com/games/scrabble"
