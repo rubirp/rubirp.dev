@@ -8,7 +8,7 @@ import type { CollectionEntry } from "astro:content";
   fechas y enlaces.
 */
 
-export const EMAIL = "contact.rubi_almansa@hotmail.com";
+export const EMAIL = "rubi_almansa@hotmail.com";
 
 export const SOCIAL = [
     { label: "GitHub", url: "https://github.com/rubirp" },

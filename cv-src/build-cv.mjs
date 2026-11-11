@@ -12,7 +12,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
 
 const contact = {
-  email: 'contact.rubi_almansa@hotmail.com',
+  email: 'rubi_almansa@hotmail.com',
   web: 'rubirp.dev',
   linkedin: 'linkedin.com/in/rubirp',
   github: 'github.com/rubirp',
