@@ -9,6 +9,20 @@
         "dev"
       ],
       "port": 4321
+    },
+    {
+      "name": "frasquito-propuestas",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4174",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "C:Users\rubi_RubiMEGAWorkSpacesWS-Astro\frasquitogames.com"
+      ],
+      "port": 4174
     }
   ]
 }
