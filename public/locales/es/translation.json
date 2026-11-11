@@ -24,19 +24,10 @@
     "multiplayer": "Multijugador",
     "slots": "Slots",
     "linko": "Linko Studios",
-    "games-global": "Games Global",
-    "mobx": "MobX",
-    "xstate": "XState",
-    "spine": "Spine",
-    "jest": "Jest"
-  },
-  "categories": {
-    "professional": "Profesional",
-    "personal": "Personal"
+    "games-global": "Games Global"
   },
   "links": {
     "visit": "Visitar",
-    "project": "Proyecto",
     "play": "Jugar",
     "download": "Descargar",
     "curriculum": "Versión PDF",
@@ -53,19 +44,13 @@
     },
     "brand": {
       "title": "Frasquito Games",
-      "subtitle": "(mi marca)",
-      "visit": "Visitar",
-      "games": "Juegos"
+      "subtitle": "(mi marca)"
     }
   },
   "home": {
     "title": "Inicio",
     "description": "Página de inicio del portafolio web de Rubén Rodríguez Pardo.",
-    "intro-t1": "¡Hola, bienvenid@ 👋!",
-    "intro-t2": "Soy Rubén Rodríguez",
-    "intro-t3": "Ingeniero Multimedia y Desarrollador de Videojuegos",
     "intro-d": "<0>Desde 2017 me dedico a <1>desarrollar videojuegos</1>, primero de forma independiente y desde 2021 <1>profesionalmente</1>.</0><0>Actualmente trabajo en <1>Linko Studios</1>, estudio asociado en exclusiva a <1>Games Global</1>, creando slots HTML5 como Linko 5. Antes desarrollé juegos para <1>Pogo (Electronic Arts)</1> y fundé mi <1>propia marca, <3><2>Frasquito Games</2></3></1>, bajo la cual publico mis proyectos personales.</0><0><1>Navega por esta web</1> para obtener más detalles <4><2>sobre mí</2></4> y mis <5><2>proyectos</2></5>.</0>",
-    "intro-btn1": "📩 Contáctame",
     "projects-pro-t": "<0>Proyectos profesionales (<2><1>Pogo</1></2>, Electronic Arts)</0>",
     "projects-per-t": "<0>Proyectos personales (<2><1>Frasquito Games</1></2>)</0>",
     "projects-linko-t": "<0>Proyectos profesionales (<2><1>Linko Studios</1></2>, Games Global)</0>",
@@ -100,12 +85,8 @@
   "projects": {
     "title": "Proyectos",
     "description": "Página de exposición de los proyectos de Rubén Rodríguez Pardo.",
-    "professional-cat": "Profesional",
-    "personal-cat": "Personal",
     "professional-lab": "Profesional",
     "personal-lab": "Personal",
-    "modal-t": "¡Lo siento!",
-    "modal-s": "Ningún proyecto coincide con este filtro. Cambia los filtros para ver más proyectos.",
     "lead": "Juegos profesionales para Linko Studios y Pogo, y proyectos personales publicados como Frasquito Games.",
     "all": "Todos",
     "filter-label": "Filtrar proyectos por categoría",
@@ -203,9 +184,7 @@
     },
     "education-t": "Educación",
     "education-tl-t1": "Grado en Ingeniería Multimedia",
-    "education-tl-s1": "Desde 2012 hasta 2017 en la Universidad de Alicante, Alicante, España",
     "education-tl-t2": "Bachillerato de Ciencias y Tecnología",
-    "education-tl-s2": "Desde 2010 hasta 2012 en IES Herminio Almendros, Almansa, España",
     "technologies-t": "Tecnologías",
     "technologies-s1": "Motores y frameworks usados frecuentemente",
     "technologies-s2": "Lenguajes usados frecuentemente",
