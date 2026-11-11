@@ -1,110 +1,68 @@
 ---
 import { t, changeLanguage } from "i18next";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import HorizontalCard from "../../../components/HorizontalCard.astro";
-import Toggle from "../../../components/projects/Toggle.astro";
+import ProjectRow from "../../../components/ProjectRow.astro";
+import { projectInfo, byPriority, isPublished } from "../../../data/site";
 
 changeLanguage("en");
 
-// Recupera `src/content/projects/**`
-//const projects = await getCollection('projects');
-// Recupera `src/content/projects/my-slug-project`
-//const myProject = await getEntry('projects', 'my-slug-project');
-// Filtra las entradas de contenido con `draft: true`
-//const projects = await getCollection('projects', ({ data }) => {
-//  return data.category === 'personal';
-//});
-// Filtrar las entradas de contenido con `draft: true` solo al construir para producción
-//const projects = await getCollection('projects', ({ data }) => {
-//  return import.meta.env.PROD ? data.draft !== true : true;
-//});
-// Filtra las entradas por subdirectorio en la colección
-//const englishDocsEntries = await getCollection('projects', ({ id }) => {
-//  return id.startsWith('en/');
-//});
-const projects = await getCollection("projects", ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
-});
-projects.sort((a, b) => {
-    //@ts-ignore
-    return a.data.priority - b.data.priority;
-});
+const projects = (await getCollection("projects", isPublished)).sort(byPriority).map(projectInfo);
+const count = (category: string) => projects.filter((project) => project.category === category).length;
+const filters = [
+    { id: "all", label: t("projects.all"), total: projects.length },
+    { id: "professional", label: t("projects.professional-lab"), total: count("professional") },
+    { id: "personal", label: t("projects.personal-lab"), total: count("personal") },
+];
 ---
 
-<BaseLayout title={t("projects.title")} description={t("projects.description")} sideBarActiveItemID="projects">
-	<div class="mb-5 flex w-full justify-between ">
-        <h1 class="text-3xl w-full font-bold">{t("projects.title")}</h1>
-
-        <div>
-            <Toggle category="personal" label={t("projects.personal-lab")}/>
-            <Toggle category="professional" label={t("projects.professional-lab")}/>
+<BaseLayout title={t("projects.title")} description={t("projects.description")} active="projects">
+    <div class="wrap view-pad">
+        <div class="page-head">
+            <h1 class="page-title">{t("projects.title")}</h1>
+            <p class="page-sub">{t("projects.lead")}</p>
         </div>
 
-    </div>
-    
-    <div id="ul-projects" class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">{t("projects.modal-t")}</p>
-        <p>{t("projects.modal-s")}</p>
-    </div>
+        <div class="filterbar">
+            <div class="filter" role="group" aria-label={t("projects.filter-label")}>
+                {filters.map((filter) => (
+                    <button type="button" data-filter={filter.id} aria-pressed={filter.id === "all" ? "true" : "false"}>
+                        {filter.label}<span class="n">{filter.total}</span>
+                    </button>
+                ))}
+            </div>
+            <p class="count" data-count data-template={t("projects.count")} aria-live="polite"></p>
+        </div>
 
-    <ul>
-    {   
-        projects.map((project) => (
-            <HorizontalCard
-                title={project.data.title}
-                excerpt={project.data.excerpt}
-                img={project.data.thumbnail}
-                url={"/projects/" + project.slug}
-                category = {project.data.category}
-                tags = {project.data.tags}
-            />
-        )) 
-    }
-    </ul>
+        <div class="list-end" data-list>
+            {projects.map((info) => <ProjectRow info={info} level="h2" />)}
+        </div>
+    </div>
 </BaseLayout>
 
-<script>
+<script is:inline>
+(function () {
+    var buttons = [].slice.call(document.querySelectorAll("[data-filter]"));
+    var rows = [].slice.call(document.querySelectorAll("[data-list] .proj"));
+    var count = document.querySelector("[data-count]");
 
-    const toggle_personal = document.getElementById('toggle-personal');
-    const toggle_professional = document.getElementById('toggle-professional');
-
-    if(toggle_personal && toggle_professional){
-
-        if(!toggle_personal.checked && !toggle_professional.checked){
-            toggle_personal.checked = true;
-            toggle_professional.checked = true;
-        }
-
-        toggle_personal.addEventListener('click', displayCards);
-        toggle_professional.addEventListener('click', displayCards);
-
-        displayCards();
-    }
-
-    function displayCards() {
-        const personal_cards = document.getElementsByClassName('personal-category');
-        const professional_cards = document.getElementsByClassName('professional-category');
-        const personal_checked = toggle_personal.checked;
-        const professional_checked = toggle_professional.checked;
-
-        const ul = document.getElementById("ul-projects");
-        if(ul){
-            if(personal_checked || professional_checked) 
-                ul.classList.add('hidden');
-            else                
-                ul.classList.remove('hidden');
-        }
-
-        for (let i = 0; i < personal_cards.length; i++) {
-            if(personal_checked)    personal_cards[i].classList.remove('hidden');
-            else                    personal_cards[i].classList.add('hidden');
-        }
-
-        for (let i = 0; i < professional_cards.length; i++) {
-            if(professional_checked)    professional_cards[i].classList.remove('hidden');
-            else                        professional_cards[i].classList.add('hidden');
+    function setFilter(value) {
+        var shown = 0;
+        rows.forEach(function (row) {
+            var on = value === "all" || row.getAttribute("data-cat") === value;
+            row.hidden = !on;
+            if (on) { shown += 1; }
+        });
+        buttons.forEach(function (button) {
+            button.setAttribute("aria-pressed", String(button.getAttribute("data-filter") === value));
+        });
+        if (count) {
+            count.textContent = count.getAttribute("data-template").replace("{shown}", shown).replace("{total}", rows.length);
         }
     }
-    
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () { setFilter(button.getAttribute("data-filter")); });
+    });
+    setFilter("all");
+})();
 </script>

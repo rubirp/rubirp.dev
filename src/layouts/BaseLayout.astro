@@ -1,55 +1,38 @@
 ---
-import i18next, { t } from 'i18next';
+import i18next, { t } from "i18next";
 
-import BaseHead from '../components/BaseHead.astro'
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import Sidebar from '../components/Sidebar.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 import { SITE_TITLE } from "../consts";
 
-const { title, description, includeSidebar = true, sideBarActiveItemID} = Astro.props;
-const initialTheme = "light";
-
+const { title, description, active } = Astro.props;
 ---
 
-<script is:inline>
-    const theme = localStorage.getItem('color-theme');
-    if (theme) document.documentElement.setAttribute('data-theme', theme);
-    else document.documentElement.setAttribute('data-theme', 'light');
-</script>
-
 <!DOCTYPE html>
-<html lang={i18next.language} data-theme={initialTheme}>
-
+<html lang={i18next.language}>
     <head>
-        <BaseHead title={SITE_TITLE + " | " + title} description={description}/>   
-        <!-- Non declarative tags -->
+        <BaseHead title={SITE_TITLE + " | " + title} description={description} />
+        <!-- El tema se fija antes de pintar: el elegido a mano o, si no hay, el del sistema. -->
+        <script is:inline>
+            (function () {
+                var theme = null;
+                try { theme = localStorage.getItem("color-theme"); } catch (e) {}
+                if (theme !== "light" && theme !== "dark") {
+                    theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.setAttribute("data-theme", theme);
+            })();
+        </script>
     </head>
-    
+
     <body>
-
-        <div class="bg-base-100 drawer lg:drawer-open">
-
-            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-
-            <div class="drawer-content bg-base-100">
-                {includeSidebar && <Header title={title} />}
-
-                <div class="md:flex md:justify-center">
-                    <main class="p-6 pt-10 lg:max-w-[900px] lg:min-w-[720px] max-w-[100vw] min-w-[100vw]">
-                      <slot />
-                    </main>
-                </div>
-                
-                <!-- <Footer /> -->
-            </div>
-
-            {includeSidebar && <Sidebar sideBarActiveItemID={sideBarActiveItemID} />}
-
-        </div>
-        
-        <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+        <a class="skip" href="#contenido">{t("nav.skip")}</a>
+        <Header active={active} />
+        <main id="contenido" tabindex="-1">
+            <slot />
+        </main>
+        <Footer />
     </body>
-
 </html>

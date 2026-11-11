@@ -1,4 +1,12 @@
 {
+  "404": {
+    "title": "Página no encontrada",
+    "description": "Error 404: Página no encontrada",
+    "t1": "La página que estás buscando no se ha podido encontrar.",
+    "b1": "Inicio",
+    "b2": "Proyectos",
+    "b3": "CV"
+  },
   "tags": {
     "pogo": "Pogo",
     "cocos": "Cocos",
@@ -14,7 +22,13 @@
     "html": "HTML",
     "css": "CSS",
     "multiplayer": "Multijugador",
-    "slots": "Slots"
+    "slots": "Slots",
+    "linko": "Linko Studios",
+    "games-global": "Games Global",
+    "mobx": "MobX",
+    "xstate": "XState",
+    "spine": "Spine",
+    "jest": "Jest"
   },
   "categories": {
     "professional": "Profesional",
@@ -25,7 +39,9 @@
     "project": "Proyecto",
     "play": "Jugar",
     "download": "Descargar",
-    "curriculum": "Versión PDF"
+    "curriculum": "Versión PDF",
+    "press": "Nota de prensa",
+    "review": "Ficha del juego"
   },
   "sidebar": {
     "rubi": {
@@ -48,10 +64,38 @@
     "intro-t1": "¡Hola, bienvenid@ 👋!",
     "intro-t2": "Soy Rubén Rodríguez",
     "intro-t3": "Ingeniero Multimedia y Desarrollador de Videojuegos",
-    "intro-d": "<0>Tras finalizar mis estudios en 2017, he estado <1>desarrollando videojuegos</1> tanto de forma independiente como <1>profesionalmente</1>.</0><0>Fundé mi <1>propia marca, <3><2>Frasquito Games</2></3></1>, bajo la cual publico mis juegos y he trabajado en <1>proyectos profesionales</1> para empresas importantes en el <1>sector, como Electronic Arts</1>.</0><0><1>Navega por esta web</1> para obtener más detalles <4><2>sobre mí</2></4> y mis <5><2>proyectos</2></5>.</0>",
+    "intro-d": "<0>Desde 2017 me dedico a <1>desarrollar videojuegos</1>, primero de forma independiente y desde 2021 <1>profesionalmente</1>.</0><0>Actualmente trabajo en <1>Linko Studios</1>, estudio asociado en exclusiva a <1>Games Global</1>, creando slots HTML5 como Linko 5. Antes desarrollé juegos para <1>Pogo (Electronic Arts)</1> y fundé mi <1>propia marca, <3><2>Frasquito Games</2></3></1>, bajo la cual publico mis proyectos personales.</0><0><1>Navega por esta web</1> para obtener más detalles <4><2>sobre mí</2></4> y mis <5><2>proyectos</2></5>.</0>",
     "intro-btn1": "📩 Contáctame",
     "projects-pro-t": "<0>Proyectos profesionales (<2><1>Pogo</1></2>, Electronic Arts)</0>",
-    "projects-per-t": "<0>Proyectos personales (<2><1>Frasquito Games</1></2>)</0>"
+    "projects-per-t": "<0>Proyectos personales (<2><1>Frasquito Games</1></2>)</0>",
+    "projects-linko-t": "<0>Proyectos profesionales (<2><1>Linko Studios</1></2>, Games Global)</0>",
+    "name": "Rubén Rodríguez",
+    "role": "Ingeniero multimedia y desarrollador de videojuegos",
+    "contact-btn": "Contáctame",
+    "cv-pdf": "CV en PDF",
+    "cv-link": "Ver el CV completo",
+    "featured-t": "Proyectos destacados",
+    "all-projects": "Ver los {{n}} proyectos",
+    "photo-alt": "Retrato de Rubén Rodríguez",
+    "ficha": {
+      "label": "Ficha técnica",
+      "name": "Rubén Rodríguez Pardo",
+      "kind": "Desarrollador de videojuegos",
+      "now-l": "Ahora",
+      "now": "Linko Studios, estudio asociado en exclusiva a Games Global",
+      "since-l": "Desde",
+      "since": "11/2024, teletrabajo",
+      "work-l": "Trabajo",
+      "work": "Slots HTML5 para casinos online",
+      "tech-l": "Tecnología",
+      "tech": "Cocos Creator y TypeScript",
+      "career-l": "Trayectoria",
+      "career": "Más de cinco años como profesional, desde 2021",
+      "edu-l": "Formación",
+      "edu": "Grado en Ingeniería Multimedia, Universidad de Alicante",
+      "lang-l": "Idiomas",
+      "lang": "Español nativo, inglés nivel B1"
+    }
   },
   "projects": {
     "title": "Proyectos",
@@ -61,51 +105,81 @@
     "professional-lab": "Profesional",
     "personal-lab": "Personal",
     "modal-t": "¡Lo siento!",
-    "modal-s": "Ningún proyecto coincide con este filtro. Cambia los filtros para ver más proyectos."
+    "modal-s": "Ningún proyecto coincide con este filtro. Cambia los filtros para ver más proyectos.",
+    "lead": "Juegos profesionales para Linko Studios y Pogo, y proyectos personales publicados como Frasquito Games.",
+    "all": "Todos",
+    "filter-label": "Filtrar proyectos por categoría",
+    "count": "Se muestran {shown} de {total} proyectos",
+    "back": "Todos los proyectos"
   },
   "cv": {
     "title": "CV",
     "description": "Página de CV y experiencia de Rubén Rodríguez Pardo.",
     "summary-t": "Perfil",
-    "summary-d": "Mi nombre es Rubén Rodríguez Pardo. En 2017, me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.</0></0>Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso, fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.</0></0>Unos años más tarde, consideré oportuno dar el salto al mundo profesional. Durante más de tres años y medio, he trabajado como desarrollador de videojuegos en empresas como Magic Media y Monti Games, llevando a cabo proyectos para terceros y colaborando con compañías líderes del sector, como Electronic Arts.",
+    "summary-d": "<0>Mi nombre es Rubén Rodríguez Pardo. En 2017 me gradué como Ingeniero Multimedia en la Universidad de Alicante, España.</0><0>Después de graduarme, decidí mejorar mis habilidades como desarrollador de videojuegos. En este proceso fundé mi propia marca, Frasquito Games, bajo la cual publico los proyectos que desarrollo de forma independiente.</0><0>En 2021 di el salto al mundo profesional. Desde entonces acumulo más de cinco años de experiencia como desarrollador de videojuegos: primero en Monti Games y Magic Media, desarrollando juegos casuales para la plataforma Pogo de Electronic Arts, y desde finales de 2024 en Linko Studios, estudio asociado en exclusiva a Games Global, donde desarrollo slots HTML5 para casinos online regulados.</0>",
     "experience-t": "Experiencia",
     "projects": {
       "pro": {
+        "linko": {
+          "0": {
+            "title": "Proyecto sin anunciar",
+            "subtitle": "Cuarto proyecto, responsable del desarrollo de cliente",
+            "description": "Nuevo slot del estudio en el que llevo el peso del desarrollo de cliente: implemento las funcionalidades nuevas y su integración con el servidor, y me ocupo de la optimización de la carga y de la adaptación a móviles y tabletas."
+          },
+          "1": {
+            "title": "Proyecto sin anunciar",
+            "subtitle": "Tercer proyecto, arranque y soporte",
+            "description": "Colaboré en el arranque del proyecto: preparación de la base del juego, montaje del arte y las animaciones, y primeras versiones de los controles de la interfaz y de sus layouts. Después he dado soporte puntual al equipo."
+          },
+          "2": {
+            "title": "Pachinko Linko 5",
+            "subtitle": "Segundo proyecto, nueva entrega sobre la base de Linko 5",
+            "description": "Segunda entrega de la serie. Desarrollé el sistema del personaje animado con Spine, la lluvia de monedas con un cierre de fuegos artificiales hecho con shaders, el popup de velocidad rápida y el rediseño del layout para cualquier proporción de pantalla. También me ocupé de la integración de sonido, la localización por mercados y la corrección de errores de QA."
+          },
+          "3": {
+            "title": "Linko 5",
+            "subtitle": "Primer proyecto, título de debut del estudio",
+            "description": "Juego con el que Games Global presentó Linko Studios en febrero de 2026. Me incorporé en las primeras fases y trabajé hasta su lanzamiento en los giros gratis, la Linko Wheel, los comodines y sus animaciones, la recuperación de partidas interrumpidas, el sistema de sonido, las vistas vertical y horizontal y la corrección de errores hasta la salida a producción."
+          },
+          "org": "Linko Studios",
+          "role": "Desarrollador de videojuegos, Games Global",
+          "where": "Teletrabajo",
+          "description": "Formo parte del equipo de desarrollo de Linko Studios, estudio asociado en exclusiva a Games Global que crea slots HTML5 para casinos online. Participo en todo el ciclo de vida de los juegos, desde las primeras fases hasta el lanzamiento y el mantenimiento posterior: implemento mecánicas y funcionalidades, cuido el rendimiento y la adaptación a móvil y escritorio, y trabajo junto a los equipos de arte, diseño y QA para llevar cada título a producción."
+        },
+        "magic-media": {
+          "0": {
+            "title": "Pogo Slots",
+            "subtitle": "Expansión, rediseño y nuevo videojuego",
+            "description": "Fue mi primera experiencia trabajando con juegos de tipo slots. Expandimos el videojuego con un nuevo título, realzamos el lobby, mejoramos la experiencia del usuario y ampliamos el contenido."
+          },
+          "org": "Magic Media",
+          "role": "Desarrollador de videojuegos, Pogo (Electronic Arts)",
+          "where": "Teletrabajo",
+          "description": "Durante esta etapa, tuve la oportunidad de trabajar para una gran empresa junto a un equipo completo de profesionales con distintos roles (diseñadores, artistas, desarrolladores, etc.) con el objetivo de desarrollar un proyecto para la plataforma de Pogo. No solo trabajé en el desarrollo del videojuego, sino que también trabajé en herramientas de soporte, como el simulador de balanceo del juego."
+        },
         "monti-games": {
-          "title": "Monti Games | Desarrollador de videojuegos | Pogo, Electronic Arts",
-          "subtitle": "Desde 05/2021 hasta 08/2023 en Monti Games, Elche, España",
-          "description": "Durante esta etapa, colaboramos directamente con la rama de Pogo (Electronic Arts), una plataforma web dedicada a servir videojuegos de corte casual. Formé parte del equipo de ingeniería dedicado exclusivamente al desarrollo y mantenimiento de videojuegos. También realicé tareas de desarrollo de herramientas generales, como actualizaciones de frameworks y SDKs utilizados.",
           "0": {
             "title": "Risk: Pogo Domination",
             "subtitle": "Tercer proyecto, refactorización y mejora del rendimiento",
             "description": "Realizamos una refactorización completa del proyecto con el objetivo de mejorar su rendimiento y facilitar su mantenimiento. Implementamos nuevas funcionalidades, migramos código de la lógica del cliente a la parte del servidor, mejoramos la sincronización entre jugadores, permitimos restaurar el estado de las partidas por abandono y corregimos errores."
           },
           "1": {
-          "title": "Yahtzee: Wild!",
-          "subtitle": "Segundo proyecto, desarrollo desde cero",
-          "description": "Desarrollamos este juego desde cero, estuve involucrado en diversas tareas durante el desarrollo, incluyendo lógica y mecánicas del cliente y servidor, restauración de partidas, emparejamiento, recompensas, FTUE, mejoras de rendimiento y corrección de errores, entre otras."
+            "title": "Yahtzee: Wild!",
+            "subtitle": "Segundo proyecto, desarrollo desde cero",
+            "description": "Desarrollamos este juego desde cero, estuve involucrado en diversas tareas durante el desarrollo, incluyendo lógica y mecánicas del cliente y servidor, restauración de partidas, emparejamiento, recompensas, FTUE, mejoras de rendimiento y corrección de errores, entre otras."
           },
           "2": {
             "title": "Scrabble: Crossword Game",
             "subtitle": "Primer proyecto, rebranding y mantenimiento",
             "description": "Fue mi primer proyecto, me uní a él en una etapa avanzada de desarrollo. Implicó una actualización gráfica y mecánica de un juego existente en la plataforma. Mi enfoque principal fue brindar soporte, principalmente del lado del cliente. Esta experiencia me ayudó a familiarizarme con la metodología de trabajo y los frameworks utilizados por el equipo."
-          }
-        },
-        "magic-media":{
-          "title": "Magic Media | Desarrollador de videojuegos | Pogo, Electronic Arts",
-          "subtitle": "Desde 12/2023 hasta 09/2024 en Magic Media, Teletrabajo",
-          "description": "Durante esta etapa, tuve la oportunidad de trabajar para una gran empresa junto a un equipo completo de profesionales con distintos roles (diseñadores, artistas, desarrolladores, etc.) con el objetivo de desarrollar un proyecto para la plataforma de Pogo. No solo trabajé en el desarrollo del videojuego, sino que también trabajé en herramientas de soporte, como el simulador de balanceo del juego.",
-          "0": {
-            "title": "Pogo Slots",
-            "subtitle": "Expansion, rediseño y nuevo videojuego",
-            "description": "Fue mi primera experiencia trabajando con juegos de tipo slots. Expandimos el videojuego con un nuevo título, realzamos el lobby, mejoramos la experiencia del usuario y ampliamos el contenido."
-          }
+          },
+          "org": "Monti Games",
+          "role": "Desarrollador de videojuegos, Pogo (Electronic Arts)",
+          "where": "Elche, España",
+          "description": "Durante esta etapa, colaboramos directamente con la rama de Pogo (Electronic Arts), una plataforma web dedicada a servir videojuegos de corte casual. Formé parte del equipo de ingeniería dedicado exclusivamente al desarrollo y mantenimiento de videojuegos. También realicé tareas de desarrollo de herramientas generales, como actualizaciones de frameworks y SDKs utilizados."
         }
       },
       "per": {
-        "title": "Frasquito Games | Desarrollador de videojuegos | Proyectos independientes",
-        "subtitle": "Desde 01/2018 hasta 05/2023 en Frasquito Games, Albacete, España",
-        "description": "Durante esta etapa, me enfoqué en el desarrollo de proyectos personales con el propósito de perfeccionar mis habilidades como programador y desarrollador. Este enfoque me permitió enriquecer mi portafolio profesional. Con la intención de presentar estos proyectos al público, creé mi propia marca, Frasquito Games, junto con su sitio web correspondiente, donde he compartido estos proyectos de manera accesible.",
         "0": {
           "title": "Touch the Coin: Hypercasual Game",
           "subtitle": "Juego publicado en Google Play",
@@ -120,7 +194,11 @@
           "title": "Otros proyectos",
           "subtitle": "Visita mi sitio web para ver más proyectos",
           "description": "En frasquitogames.com, puedes encontrar más proyectos que he desarrollado de forma independiente. Estos proyectos abarcan una amplia variedad de géneros y mecánicas, y están disponibles para jugar de forma gratuita."
-        }
+        },
+        "org": "Frasquito Games",
+        "role": "Desarrollador de videojuegos, proyectos independientes",
+        "where": "Albacete, España",
+        "description": "Durante esta etapa, me enfoqué en el desarrollo de proyectos personales con el propósito de perfeccionar mis habilidades como programador y desarrollador. Este enfoque me permitió enriquecer mi portafolio profesional. Con la intención de presentar estos proyectos al público, creé mi propia marca, Frasquito Games, junto con su sitio web correspondiente, donde he compartido estos proyectos de manera accesible."
       }
     },
     "education-t": "Educación",
@@ -134,86 +212,126 @@
     "technologies-s3": "Herramientas de uso común",
     "skills-t": "Habilidades",
     "skill-1": "Español nativo",
-    "skill-2": "Inglés medio",
+    "skill-2": "Inglés nivel B1",
     "skill-3": "Trabajo en equipo",
     "skill-4": "Proactividad",
-    "skill-5": "Autogestión"
-  },
-  "404":
-  {
-    "title": "Página no encontrada",
-    "description": "Error 404: Página no encontrada",
-    "t1": "La página que estás buscando no se ha podido encontrar.",
-    "b1": "Inicio",
-    "b2": "Proyectos",
-    "b3": "CV"
+    "skill-5": "Autogestión",
+    "page-title": "Currículum",
+    "lead": "Rubén Rodríguez Pardo, ingeniero multimedia y desarrollador de videojuegos.",
+    "index-label": "Secciones del CV",
+    "now": "hoy",
+    "education-tl-o1": "Universidad de Alicante",
+    "education-tl-d1": "2012 – 2017",
+    "education-tl-w1": "Alicante, España",
+    "education-tl-o2": "IES Herminio Almendros",
+    "education-tl-d2": "2010 – 2012",
+    "education-tl-w2": "Almansa, España"
   },
   "content": {
     "projects": {
+      "linko5": {
+        "title": "Linko 5",
+        "subtitle": "Cinco monedas en línea: el debut de Linko Studios",
+        "description": "Slot HTML5 de carácter profesional desarrollado en Cocos Creator para Linko Studios, distribuido en exclusiva por Games Global.",
+        "excerpt": "El título de debut de Linko Studios. Consigue cinco monedas en cualquier línea horizontal, vertical o diagonal y suma sus valores, con comodines, giros gratis, cajas misteriosas y la Linko Wheel.",
+        "content": "<0>Linko 5 es el juego con el que Games Global presentó Linko Studios en febrero de 2026. Su mecánica es original y fácil de entender: al reunir cinco monedas en cualquier línea horizontal, vertical o diagonal se gana la suma de sus valores.</0><0>Alrededor de esa idea hay un comodín permanente en el centro de la cuadrícula que puede transformarse para aumentar el valor de las monedas o volver a girar las casillas vacías, comodines diamante que enlazan cadenas de monedas y dan acceso a los giros gratis, cajas misteriosas con monedas de mayor valor y la Linko Wheel, que reparte lluvia de comodines, multiplicadores, recogida instantánea de monedas y jackpots.</0><0>Me incorporé al equipo de cliente en las primeras fases del proyecto y trabajé en él hasta su lanzamiento. Me ocupé de los giros gratis (entrada, contador, reactivación y cierre), la Linko Wheel y sus premios, las animaciones de los comodines y de la expectación, la recuperación de partidas interrumpidas, el sistema de sonido y sus herramientas de depuración, la adaptación a las vistas vertical y horizontal y la corrección de errores de QA hasta la salida a producción.</0>"
+      },
+      "pachinko-linko": {
+        "title": "Pachinko Linko 5",
+        "subtitle": "La mecánica Linko con ambientación japonesa",
+        "description": "Slot HTML5 de carácter profesional desarrollado en Cocos Creator para Linko Studios, distribuido en exclusiva por Games Global.",
+        "excerpt": "Segunda entrega de la serie Linko 5, con ambientación japonesa, un personaje animado que reacciona a la partida y una lluvia de monedas rematada con fuegos artificiales.",
+        "content": "<0>Pachinko Linko 5 lleva la mecánica de cinco monedas en línea a una ambientación japonesa, con jackpots, giros gratis, compra de funcionalidad y la Linko Wheel.</0><0>El proyecto parte de la base de Linko 5, y gran parte del trabajo consistió en convertir esa base en un juego con identidad propia. Desarrollé el sistema del personaje, un gato de la suerte animado con Spine que reacciona a lo que ocurre en la partida y que debe gestionar bien los cambios de estado mientras se cargan sus animaciones. También hice la lluvia de monedas, con un cierre de fuegos artificiales implementado con shaders.</0><0>Rehíce el layout para que el juego se adapte a cualquier proporción de pantalla, incluidas las resoluciones estiradas, y añadí el popup de velocidad rápida. Completan mi trabajo la integración de sonido, la localización por mercados (algunas jurisdicciones exigen terminología distinta), una herramienta para inspeccionar la escena en ejecución y la corrección de los errores detectados por QA.</0>"
+      },
       "slots": {
         "title": "Pogo Slots",
         "subtitle": "Recompensas sin fin en las máquinas únicas de Pogo Slots",
         "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
         "excerpt": "¡Gana en grande con Pogo Slots! Elige tu diversión con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant. ¡Gira, completa tarjetas de misión y gana, gana, gana!",
-        "content": "<0>Experimenta la emoción de ganar con Pogo Slots. Nuestro juego cuenta con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant, cada una con una jugabilidad cautivadora. Completa misiones llenas de diversión para obtener recompensas y aprovecha los potenciadores para ganar aún más. ¡Con Pogo Slots, cada jugador es un ganador!</1></1>¡Colecciona recompensas cada hora, todos los días, en el Lobby! Relájate y revisa todas tus ganancias antes de lanzarte al mundo de nuestras máquinas tragamonedas únicas:</1></1>Experimenta el misterio de La Purrámide del Nilo, una máquina tragamonedas que te lleva por el enigmático mundo del antiguo Egipto, prometiendo emocionantes recompensas en cada giro. Encuentra significado y ganancias en los innumerables jeroglíficos y líneas de pago.</1></1>Disfruta de la pacífica atmósfera de El Jardín de Grant, un paraíso de tragamonedas que te inunda con abundantes premios en un ambiente sereno de jardín. Con los pagos en estilo de coincidencias del Jardín de Grant, ¡las ganancias nunca paran! Cada vez que ganas, más símbolos caen para mantener las combinaciones ganadoras. ¿Podrás conseguir la esquiva combinación de Triple Flor?</1></1>Este juego de casino en línea está disponible para todos los jugadores, sin necesidad de registro, y ofrece giros gratis para que nunca te aburras.</0>"
+        "content": "<0>Experimenta la emoción de ganar con Pogo Slots. Nuestro juego cuenta con dos máquinas tragamonedas únicas: La Purrámide del Nilo y El Jardín de Grant, cada una con una jugabilidad cautivadora. Completa misiones llenas de diversión para obtener recompensas y aprovecha los potenciadores para ganar aún más. ¡Con Pogo Slots, cada jugador es un ganador!</0><0>¡Colecciona recompensas cada hora, todos los días, en el Lobby! Relájate y revisa todas tus ganancias antes de lanzarte al mundo de nuestras máquinas tragamonedas únicas:</0><0>Experimenta el misterio de La Purrámide del Nilo, una máquina tragamonedas que te lleva por el enigmático mundo del antiguo Egipto, prometiendo emocionantes recompensas en cada giro. Encuentra significado y ganancias en los innumerables jeroglíficos y líneas de pago.</0><0>Disfruta de la pacífica atmósfera de El Jardín de Grant, un paraíso de tragamonedas que te inunda con abundantes premios en un ambiente sereno de jardín. Con los pagos en estilo de coincidencias del Jardín de Grant, ¡las ganancias nunca paran! Cada vez que ganas, más símbolos caen para mantener las combinaciones ganadoras. ¿Podrás conseguir la esquiva combinación de Triple Flor?</0><0>Este juego de casino en línea está disponible para todos los jugadores, sin necesidad de registro, y ofrece giros gratis para que nunca te aburras.</0>"
       },
       "risk": {
         "title": "Risk Pogo Domination",
         "subtitle": "Conquista territorios y domina el mundo",
         "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
         "excerpt": "Ataca, defiende, fortifica y aumenta tu territorio mientras luchas contra otros jugadores para controlar el mundo en este clásico juego de mesa. Mueve estratégicamente tus unidades militares y tira los dados para conquistar tierras.",
-        "content": "<0>RISK: Pogo Domination es la clásica experiencia de juego de mesa, ¡con un toque Pogo! Juega con hasta otros 6 jugadores de Pogo™ en tres modos de juego RISK diferentes. En el modo Clásico, la clave de la victoria es conquistar todos los territorios del mundo. En el modo Capital, defiende tu capital de los invasores mientras te lanzas a la conquista de las capitales rivales. En el modo Misión Secreta, cada uno tiene su propio plan secreto para ganar la partida. ¿Serás capaz de completar tu misión secreta antes de que tus enemigos completen las suyas?</1></1>Reclama territorios por turnos para hacerte con tu parte del mundo. Refuerza tus territorios con una selección de unidades militares estéticamente únicas para atacar rápidamente a tus oponentes. Tira tus dados personalizables para determinar el destino de naciones enteras. Fortifica unidades militares a través de tus líneas de suministro internacionales para repeler a posibles atacantes, ¡o prepara la cabeza de playa para tu próximo asalto!</1></1>Gana cartas de RISK en cada ronda. Gira 3 cartas iguales para conseguir tropas de bonificación que te ayudarán a aplastar a tus oponentes o te sacarán del borde de la derrota.</0>"
+        "content": "<0>RISK: Pogo Domination es la clásica experiencia de juego de mesa, ¡con un toque Pogo! Juega con hasta otros 6 jugadores de Pogo™ en tres modos de juego RISK diferentes. En el modo Clásico, la clave de la victoria es conquistar todos los territorios del mundo. En el modo Capital, defiende tu capital de los invasores mientras te lanzas a la conquista de las capitales rivales. En el modo Misión Secreta, cada uno tiene su propio plan secreto para ganar la partida. ¿Serás capaz de completar tu misión secreta antes de que tus enemigos completen las suyas?</0><0>Reclama territorios por turnos para hacerte con tu parte del mundo. Refuerza tus territorios con una selección de unidades militares estéticamente únicas para atacar rápidamente a tus oponentes. Tira tus dados personalizables para determinar el destino de naciones enteras. Fortifica unidades militares a través de tus líneas de suministro internacionales para repeler a posibles atacantes, ¡o prepara la cabeza de playa para tu próximo asalto!</0><0>Gana cartas de RISK en cada ronda. Gira 3 cartas iguales para conseguir tropas de bonificación que te ayudarán a aplastar a tus oponentes o te sacarán del borde de la derrota.</0>"
       },
       "yahtzee": {
         "title": "Yahtzee Wild",
         "subtitle": "Clásico juego de dados y tablero",
         "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts",
         "excerpt": "¡Juega a Yahtzee! con familiares y amigos tal como lo recuerdas. Compite por la puntuación más alta de Yahtzee en una tabla de clasificación en tiempo real mientras tiras los dados en una serie de rondas cronometradas.",
-        "content": "<0>En Yahtzee Wild, podrás competir con hasta 11 jugadores por conseguir la máxima puntuación en Yahtzee. Los jugadores dispondrán de 13 rondas para lanzar 5 dados y crear manos 'tipo póquer'. En cada ronda, los jugadores tendrán 3 tiradas para intentar maximizar su valor en puntos. En cada tirada, podrán elegir entre conservar o volver a tirar cualquiera de sus 5 dados. Conserva estratégicamente los dados para crear 3 de una clase, 4 de una clase, full, o incluso ir a por todas y conseguir el escurridizo 5 de una clase Yahtzee! Los jugadores registrarán su progreso general en la hoja de puntuaciones. Una vez completadas las 13 rondas, todos los jugadores compararán sus hojas de puntuación para ver quién ha conseguido más puntos y reclamar el primer puesto de la clasificación.</1></1>Yahtzee Wild introduce la posibilidad de usar 'Dados Salvajes'. Los jugadores pueden sustituir cualquier dado de la ronda por un 'Dado Salvaje'. Estos poderosos dados comodín se pueden utilizar con cualquier número. Usa estratégicamente estos dados para completar manos específicas y maximizar tus puntos. Los jugadores registrados en Pogo podrán ganar Monedas Zee por jugar, lo que les permitirá comprar y utilizar Dados Comodín. Si los jugadores se sienten generosos, podrán regalar un</0>"
+        "content": "<0>En Yahtzee Wild, podrás competir con hasta 11 jugadores por conseguir la máxima puntuación en Yahtzee. Los jugadores dispondrán de 13 rondas para lanzar 5 dados y crear manos 'tipo póquer'. En cada ronda, los jugadores tendrán 3 tiradas para intentar maximizar su valor en puntos. En cada tirada, podrán elegir entre conservar o volver a tirar cualquiera de sus 5 dados. Conserva estratégicamente los dados para crear 3 de una clase, 4 de una clase, full, o incluso ir a por todas y conseguir el escurridizo 5 de una clase Yahtzee! Los jugadores registrarán su progreso general en la hoja de puntuaciones. Una vez completadas las 13 rondas, todos los jugadores compararán sus hojas de puntuación para ver quién ha conseguido más puntos y reclamar el primer puesto de la clasificación.</0><0>Yahtzee Wild introduce la posibilidad de usar 'Dados Salvajes'. Los jugadores pueden sustituir cualquier dado de la ronda por un 'Dado Salvaje'. Estos poderosos dados comodín se pueden utilizar con cualquier número. Usa estratégicamente estos dados para completar manos específicas y maximizar tus puntos. Los jugadores registrados en Pogo podrán ganar Monedas Zee por jugar, lo que les permitirá comprar y utilizar Dados Comodín.</0>"
       },
       "scrabble": {
         "title": "Scrabble",
         "subtitle": "Un juego de crucigramas clásico",
         "description": "Videojuego de carácter profesional desarrollado en Cocos Creator para la plataforma Pogo de Electronic Arts.",
         "excerpt": "¡Pon tus letras en juego con SCRABBLE online gratis! Juega solo o desafía a tus amigos en este clásico juego de palabras online gratuito.",
-        "content": "<0>¡Juega gratis al SCRABBLE en línea en Pogo™! Practica tus habilidades contra oponentes del ordenador, o crea una partida de SCRABBLE con tu familia y amigos. Incluso puedes enfrentarte a otros jugadores de Pogo™, emparejados con tu nivel de habilidad. ¡Los usuarios gratuitos y los miembros del Club Pogo también tienen acceso a otros divertidos modos de juego!</1></1>En el juego clásico de SCRABBLE, te turnas para crear palabras en el tablero de juego utilizando letras de tu bandeja. Cada letra vale una cierta cantidad de puntos, que contribuyen a la puntuación total de tu palabra.</1></1>Utiliza el tablero a tu favor colocando palabras en una o más casillas premium, como 'Puntuación doble de letra' o 'Puntuación triple de palabra'. ¡Convierte hasta la más humilde de las palabras en una gran ganadora!</0>"
+        "content": "<0>¡Juega gratis al SCRABBLE en línea en Pogo™! Practica tus habilidades contra oponentes del ordenador, o crea una partida de SCRABBLE con tu familia y amigos. Incluso puedes enfrentarte a otros jugadores de Pogo™, emparejados con tu nivel de habilidad. ¡Los usuarios gratuitos y los miembros del Club Pogo también tienen acceso a otros divertidos modos de juego!</0><0>En el juego clásico de SCRABBLE, te turnas para crear palabras en el tablero de juego utilizando letras de tu bandeja. Cada letra vale una cierta cantidad de puntos, que contribuyen a la puntuación total de tu palabra.</0><0>Utiliza el tablero a tu favor colocando palabras en una o más casillas premium, como 'Puntuación doble de letra' o 'Puntuación triple de palabra'. ¡Convierte hasta la más humilde de las palabras en una gran ganadora!</0>"
       },
       "touch-the-coin": {
         "title": "Touch the Coin",
         "subtitle": "Juego Hyper casual para dispositivos móviles",
         "description": "Videojuego de carácter personal desarrollado con PhaserJS y desplegado en dispositivos móviles",
         "excerpt": "Persigue monedas con un simple toque. Gana tiempo extra, crea combos y disfruta de partidas rápidas y adictivas en cualquier momento.",
-        "content": "<0>'Touch the Coin' es un juego del género Hypercasual que te desafía a alcanzar monedas con la bola que controlas. La mecánica es sencilla: con simples toques en la pantalla, puedes cambiar la dirección de la bola. Cada vez que alcanzas una moneda, ganas tiempo adicional. ¡Enlázalas rápidamente para desencadenar combos y obtener tiempo extra!</1></1>Este juego es altamente adictivo y perfecto para partidas rápidas en cualquier momento y lugar.</0>"
+        "content": "<0>'Touch the Coin' es un juego del género Hypercasual que te desafía a alcanzar monedas con la bola que controlas. La mecánica es sencilla: con simples toques en la pantalla, puedes cambiar la dirección de la bola. Cada vez que alcanzas una moneda, ganas tiempo adicional. ¡Enlázalas rápidamente para desencadenar combos y obtener tiempo extra!</0><0>Este juego es altamente adictivo y perfecto para partidas rápidas en cualquier momento y lugar.</0>"
       },
       "pet-balls": {
         "title": "Pet Balls",
         "subtitle": "Domina la física con estos pets redondos",
         "description": "Videojuego de carácter personal desarrollado con Cocos Creator",
         "excerpt": "Pet Balls es un proyecto concebido con el propósito de explorar y poner a prueba las capacidades del motor Cocos Creator.",
-        "content": "<0>Pet Balls es un proyecto de juego diseñado con el propósito principal de poner a prueba y evaluar el rendimiento del motor Cocos Creator, específicamente la versión 2.3.3. El juego se caracteriza por su enfoque en mecánicas simples basadas en física, aprovechando el motor de física Box2D, el cual ha sido adaptado y personalizado para integrarse de manera óptima con el entorno de Cocos Creator.</1></1>Este juego ofrece una experiencia diversa con un total de 15 niveles, distribuidos en 5 tipos de minijuegos y 3 niveles de dificultad. En otras palabras, se presentan tres niveles de creciente complejidad para cada uno de los 5 'pets' que los jugadores pueden controlar.</1></1>Los 'pets' son criaturas animadas con forma circular que interactúan con su entorno a través de colisiones. Estos 5 tipos de 'pets' incluyen al pájaro, al pez, al pulpo, al mono y a la rana, cada uno con mecánicas únicas que desafían a los jugadores a completar los niveles de manera creativa y estratégica.</0>"
+        "content": "<0>Pet Balls es un proyecto de juego diseñado con el propósito principal de poner a prueba y evaluar el rendimiento del motor Cocos Creator, específicamente la versión 2.3.3. El juego se caracteriza por su enfoque en mecánicas simples basadas en física, aprovechando el motor de física Box2D, el cual ha sido adaptado y personalizado para integrarse de manera óptima con el entorno de Cocos Creator.</0><0>Este juego ofrece una experiencia diversa con un total de 15 niveles, distribuidos en 5 tipos de minijuegos y 3 niveles de dificultad. En otras palabras, se presentan tres niveles de creciente complejidad para cada uno de los 5 'pets' que los jugadores pueden controlar.</0><0>Los 'pets' son criaturas animadas con forma circular que interactúan con su entorno a través de colisiones. Estos 5 tipos de 'pets' incluyen al pájaro, al pez, al pulpo, al mono y a la rana, cada uno con mecánicas únicas que desafían a los jugadores a completar los niveles de manera creativa y estratégica.</0>"
       },
       "mix-ball": {
         "title": "Mix Ball",
         "subtitle": "Proyecto basado en físicas con PhaserJS",
         "description": "Videojuego de carácter personal desarrollado con PhaserJS",
         "excerpt": "Toma el control de una bola única y navega a través de colisiones estratégicas con los tiles verdes para avanzar. Pero cuidado, otros tiles pueden agregar desafíos inesperados en tu travesía.",
-        "content": "<0>Mix Ball es un juego casual desarrollado utilizando el framework PhaserJS, creado con el propósito de explorar y poner a prueba esta tecnología para comprender su potencial y capacidades.</1></1>El juego se caracteriza por ofrecer niveles simples y de resolución rápida, donde los jugadores asumen el control de una bola con atributos específicos que la diferencian de otras bolas presentes en el juego. El objetivo es guiar la bola hacia el final del nivel mediante colisiones con los tiles verdes en el escenario. Sin embargo, es importante tener precaución al interactuar con los demás tiles y sus atributos, ya que pueden presentar desafíos adicionales en la travesía.</0>"
+        "content": "<0>Mix Ball es un juego casual desarrollado utilizando el framework PhaserJS, creado con el propósito de explorar y poner a prueba esta tecnología para comprender su potencial y capacidades.</0><0>El juego se caracteriza por ofrecer niveles simples y de resolución rápida, donde los jugadores asumen el control de una bola con atributos específicos que la diferencian de otras bolas presentes en el juego. El objetivo es guiar la bola hacia el final del nivel mediante colisiones con los tiles verdes en el escenario. Sin embargo, es importante tener precaución al interactuar con los demás tiles y sus atributos, ya que pueden presentar desafíos adicionales en la travesía.</0>"
       },
       "haciendo-campana": {
         "title": "Haciendo Campaña",
         "subtitle": "Juego para la CPCRetroDev",
         "description": "Videojuego de carácter personal desarrollado en C++ para el microordenador Amstrad CPC 464",
         "excerpt": "Enfrentamientos multijugador, donde dos personajes, compiten por la dominación de zonas estratégicas del escenario. Conquista las pancartas estratégicamente ubicadas para asegurarte la victoria en un escenario lleno de obstáculos y objetos que influirán en tu desempeño en la campaña.",
-        "content": "<0>'Haciendo Campaña' es un videojuego de estrategia en tiempo real diseñado para la plataforma Amstrad CPC 464, con un enfoque especial en la jugabilidad multijugador.</1></1>El juego ofrece emocionantes partidas rápidas donde dos personajes, ya sea controlados por jugadores o por una inteligencia artificial (CPU), se enfrentan en la batalla por conquistar las distintas zonas disponibles en el escenario. Al finalizar el tiempo de la partida, el jugador que haya logrado conquistar la mayor cantidad de zonas (identificadas mediante pancartas colocadas estratégicamente) se corona como el vencedor.</1></1>El escenario está diseñado con obstáculos y objetos que influyen en la jugabilidad, lo que requiere de estrategia y habilidad para asegurar la victoria en la campaña. El juego cuenta con un modo multijugador, lo que lo hace ideal para desafiar a tus amigos en emocionantes enfrentamientos. También puedes enfrentarte a la CPU en un emocionante modo para un jugador.</0>"
+        "content": "<0>'Haciendo Campaña' es un videojuego de estrategia en tiempo real diseñado para la plataforma Amstrad CPC 464, con un enfoque especial en la jugabilidad multijugador.</0><0>El juego ofrece emocionantes partidas rápidas donde dos personajes, ya sea controlados por jugadores o por una inteligencia artificial (CPU), se enfrentan en la batalla por conquistar las distintas zonas disponibles en el escenario. Al finalizar el tiempo de la partida, el jugador que haya logrado conquistar la mayor cantidad de zonas (identificadas mediante pancartas colocadas estratégicamente) se corona como el vencedor.</0><0>El escenario está diseñado con obstáculos y objetos que influyen en la jugabilidad, lo que requiere de estrategia y habilidad para asegurar la victoria en la campaña. El juego cuenta con un modo multijugador, lo que lo hace ideal para desafiar a tus amigos en emocionantes enfrentamientos. También puedes enfrentarte a la CPU en un emocionante modo para un jugador.</0>"
       },
-      "prisionero":
-      {
+      "prisionero": {
         "title": "Prisionero",
         "subtitle": "Libertad a través de la reputación en Prisionero.",
         "description": "Videojuego de carácter personal desarrollado con C++ y SFML.",
         "excerpt": "Controla al prisionero y usa la reputación de los personajes para escapar de salas desafiantes. Tu astucia es clave para abrir la puerta hacia el siguiente nivel. ¿Estás listo para el desafío?",
-        "content": "<0>Prisionero es un prototipo de juego de puzles que ha sido diseñado con el propósito de implementar y poner a prueba diversos algoritmos de Inteligencia Artificial.</1></1>En este juego, te embarcarás en la emocionante misión de escapar de cada sala que se presenta ante el prisionero, al cual controlarás como jugador principal. Utiliza la reputación de los personajes para superar desafiantes obstáculos y abrir la puerta que te conducirá al siguiente nivel.</0>"
+        "content": "<0>Prisionero es un prototipo de juego de puzles que ha sido diseñado con el propósito de implementar y poner a prueba diversos algoritmos de Inteligencia Artificial.</0><0>En este juego, te embarcarás en la emocionante misión de escapar de cada sala que se presenta ante el prisionero, al cual controlarás como jugador principal. Utiliza la reputación de los personajes para superar desafiantes obstáculos y abrir la puerta que te conducirá al siguiente nivel.</0>"
       }
     }
+  },
+  "nav": {
+    "skip": "Saltar al contenido",
+    "main": "Principal",
+    "language": "Idioma",
+    "to-dark": "Cambiar a tema oscuro",
+    "to-light": "Cambiar a tema claro"
+  },
+  "studios": {
+    "linko": "Linko Studios, estudio asociado a Games Global",
+    "magic-media": "Magic Media, para Pogo (Electronic Arts)",
+    "monti-games": "Monti Games, para Pogo (Electronic Arts)",
+    "per": "Frasquito Games, proyecto personal"
+  },
+  "spec": {
+    "studio": "Estudio",
+    "period": "Etapa",
+    "tech": "Tecnología",
+    "kind": "Tipo",
+    "links": "Enlaces"
+  },
+  "gallery": {
+    "label": "Imágenes del proyecto",
+    "prev": "Imagen anterior",
+    "next": "Imagen siguiente",
+    "go": "Ver la imagen {{n}}"
   }
 }

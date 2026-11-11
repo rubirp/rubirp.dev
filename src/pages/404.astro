@@ -6,14 +6,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 changeLanguage("es");
 ---
 
-<BaseLayout title={t("404.title")} description={t("404.description")} includeSidebar={false}>
-  <div class="text-center">
-    <h1 class="text-9xl font-bold mb-4">🏝</h1>
-    <h1 class="text-9xl font-bold mb-2">404</h1>
-    <h3 class="text-2xl">{t("404.title")}</h3>
-    <h3 class="text-2xl mt-9">{t("404.t1")}</h3>
-    <a class="btn btn-accent m-2" href={localizePath("/")}>{t("404.b1")}</a>
-    <a class="btn btn-accent m-2" href={localizePath("/projects")}>{t("404.b2")}</a>
-    <a class="btn btn-accent m-2" href={localizePath("/cv")}>{t("404.b3")}</a>
-  </div>
+<BaseLayout title={t("404.title")} description={t("404.description")}>
+    <div class="wrap notfound">
+        <h1 class="page-title">404</h1>
+        <p class="page-sub">{t("404.title")}. {t("404.t1")}</p>
+        <div class="notfound__actions">
+            <a class="btn btn--primary" href={localizePath("/")}>{t("404.b1")}</a>
+            <a class="btn btn--line" href={localizePath("/projects")}>{t("404.b2")}</a>
+            <a class="btn btn--line" href={localizePath("/cv")}>{t("404.b3")}</a>
+        </div>
+    </div>
 </BaseLayout>

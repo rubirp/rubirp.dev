@@ -5,6 +5,7 @@ subtitle: 'content.projects.scrabble.subtitle'
 description: 'content.projects.scrabble.description'
 excerpt: 'content.projects.scrabble.excerpt'
 category: 'professional'
+company: 'pogo'
 thumbnail: '/images/scrabble/0.webp'
 
 content: 'content.projects.scrabble.content'

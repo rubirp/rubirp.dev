@@ -1,0 +1,18 @@
+---
+import Cover from "./Cover.astro";
+import Spec from "./Spec.astro";
+
+/* Fila grande de proyecto: portada, qué hice y ficha de datos. */
+const { info, level = "h2" } = Astro.props;
+const Heading = level;
+---
+
+<article class="proj" data-cat={info.category}>
+    <Cover img={info.img} title={info.title} />
+    <div>
+        <Heading class="proj__title"><a href={info.url}>{info.title}</a></Heading>
+        <p class="proj__role">{info.role}</p>
+        <p class="proj__did">{info.did}</p>
+    </div>
+    <Spec info={info} />
+</article>

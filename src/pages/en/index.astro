@@ -4,117 +4,170 @@ import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalCard from "../../components/HorizontalCard.astro";
-import TimeLineElement from "../../components/cv/TimeLine.astro";
+import ProjectRow from "../../components/ProjectRow.astro";
+import ProjectBrief from "../../components/ProjectBrief.astro";
+import { EMAIL, SOCIAL, jobs, timeline, projectInfo, byPriority, isPublished, formatPeriod } from "../../data/site";
 
 changeLanguage("en");
 
 const isSpanish = i18next.language === "es";
-const personal_projects = await getCollection("projects", ({ data }) => {
-    return data.category === "personal" && (import.meta.env.PROD ? data.draft !== true : true);
-});
-personal_projects.sort((a, b) => {
-    //@ts-ignore
-    return a.data.priority - b.data.priority;
-});
-const professional_projects = await getCollection("projects", ({ data }) => {
-    return data.category === "professional" && (import.meta.env.PROD ? data.draft !== true : true);
-});
-professional_projects.sort((a, b) => {
-    //@ts-ignore
-    return a.data.priority - b.data.priority;
-});
+const projects = (await getCollection("projects", isPublished)).sort(byPriority);
+const linko = projects.filter((project) => project.data.company === "linko").map(projectInfo);
+const pogo = projects.filter((project) => project.data.company === "pogo").map(projectInfo);
+const personal = projects.filter((project) => project.data.category === "personal").map(projectInfo);
+const scale = timeline();
+const linkoJob = jobs.find((job) => job.id === "linko");
+const montiJob = jobs.find((job) => job.id === "monti-games");
+const magicJob = jobs.find((job) => job.id === "magic-media");
+const perJob = jobs.find((job) => job.id === "per");
+const ficha = ["now", "since", "work", "tech", "career", "edu", "lang"];
 ---
 
-<BaseLayout title={t("home.title")} description={t("home.description")} sideBarActiveItemID="home">
+<BaseLayout title={t("home.title")} description={t("home.description")} active="home">
 
-	<div class="pb-10">
-		<h2 class="text-xl py-1">{t("home.intro-t1")}</h2>
-		<h1 class="text-5xl font-bold">{t("home.intro-t2")}</h1>
-		<h2 class="text-3xl py-3 font-bold">{t("home.intro-t3")}</h2>
-		<div class="py-2 flex flex-col gap-y-6">
+    <div class="wrap hero">
+        <h1 class="hero__h1">
+            <span class="hero__name">{t("home.name")}</span>
+            <span class="hero__role">{t("home.role")}</span>
+        </h1>
 
-			<Trans i18nKey="home.intro-d">
-				<text class="text-lg"></text>
-				<b></b>
-				<u></u>
-				<a href="https://frasquitogames.com/" target="_blank"></a>
-				<a href={localizePath("/cv")}></a>
-				<a href={localizePath("/projects")}></a>
-			</Trans>
+        <div class="hero__cols">
+            <div>
+                <div class="lede">
+                    <Trans i18nKey="home.intro-d">
+                        <p></p>
+                        <strong></strong>
+                        <span></span>
+                        <a href="https://frasquitogames.com/" target="_blank" rel="noopener noreferrer"></a>
+                        <a href={localizePath("/cv")}></a>
+                        <a href={localizePath("/projects")}></a>
+                    </Trans>
+                </div>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href={"mailto:" + EMAIL}>{t("home.contact-btn")}</a>
+                    <a class="btn btn--line" href={isSpanish ? "/docs/cv-es.pdf" : "/docs/cv-en.pdf"} target="_blank" rel="noopener">{t("home.cv-pdf")}</a>
+                </div>
+                <ul class="hero__social">
+                    {SOCIAL.map((item) => (
+                        <li><a href={item.url} target="_blank" rel="noopener noreferrer">{item.label}</a></li>
+                    ))}
+                </ul>
+            </div>
 
-			<div class="mt-8 flex gap-3">
-				<a class="whitespace-nowrap bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="mailto:contact.rubi_almansa@hotmail.com" target="_blank" referrerpolicy="no-referrer-when-downgrade">{t("home.intro-btn1")}</a>
-				<a class="whitespace-nowrap bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href={isSpanish ? "/docs/cv-es.pdf" : "/docs/cv-en.pdf"} target="_blank" >
-					<span>📄CV</span>
-					<svg class="w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
-				  </a>
-			</div>
-			
-		</div>
-	</div>
+            <aside class="ficha" aria-label={t("home.ficha.label")}>
+                <div class="ficha__id">
+                    <img class="ficha__photo" src="/images/profile.webp" alt={t("home.photo-alt")} width="144" height="144" />
+                    <div>
+                        <p class="ficha__name">{t("home.ficha.name")}</p>
+                        <p class="ficha__kind">{t("home.ficha.kind")}</p>
+                    </div>
+                </div>
+                <dl class="ficha__list">
+                    {ficha.map((key) => (
+                        <div>
+                            <dt>{t(`home.ficha.${key}-l`)}</dt>
+                            <dd class:list={{ dot: key === "now" }}>{t(`home.ficha.${key}`)}</dd>
+                        </div>
+                    ))}
+                </dl>
+            </aside>
+        </div>
+    </div>
 
-	<div class="mb-5">
-		<h2 class="text-3xl w-full font-bold">{t("cv.experience-t")}</h2>
-	</div>
+    <section class="band block" aria-labelledby="t-exp">
+        <div class="wrap">
+            <div class="block__head">
+                <h2 class="h2" id="t-exp">{t("cv.experience-t")}</h2>
+                <a class="block__link" href={localizePath("/cv") + "#experiencia"}>{t("home.cv-link")}</a>
+            </div>
 
-	<div class="time-line-container pb-10">
-		<TimeLineElement
-		  title={t("cv.projects.pro.magic-media.title")}
-		  subtitle={t("cv.projects.pro.magic-media.subtitle")}
-		/>
+            <div class="ledger" style={`--years:${scale.years};--span:${scale.span}`}>
+                <div class="ledger__axis" aria-hidden="true">
+                    <div class="ledger__years">
+                        {scale.labels.map((label) => <span style={`--y:${label.offset}`}>{label.year}</span>)}
+                    </div>
+                </div>
+                <ol>
+                    {jobs.map((job, index) => {
+                        const range = scale.range(job);
+                        const games = job.projects.filter((project) => project.slug).map((project) => t(`${job.key}.${project.n}.title`));
+                        return (
+                            <li class:list={["entry", { "entry--now": job.to === null }]}>
+                                <p class="entry__dates">
+                                    {formatPeriod(job).from} – {job.to === null ? <span class="now">{t("cv.now")}</span> : formatPeriod(job).to}
+                                </p>
+                                <div class="entry__strip" aria-hidden="true"><i style={`--s:${range.start};--e:${range.end};--i:${index}`}></i></div>
+                                <div class="entry__what">
+                                    <h3 class="entry__org">{t(`${job.key}.org`)}</h3>
+                                    <p class="entry__role">{t(`${job.key}.role`)}</p>
+                                    {games.length > 0 && <p class="entry__games">{games.join(", ")}</p>}
+                                </div>
+                                <p class="entry__where">{t(`${job.key}.where`)}</p>
+                            </li>
+                        );
+                    })}
+                </ol>
+            </div>
+        </div>
+    </section>
 
-		<TimeLineElement
-		  title={t("cv.projects.pro.monti-games.title")}
-		  subtitle={t("cv.projects.pro.monti-games.subtitle")}
-		/>
-	
-		<TimeLineElement
-		title={t("cv.projects.per.title")}
-		subtitle={t("cv.projects.per.subtitle")}
-		/>
-	  </div>
+    <section class="block" aria-labelledby="t-dest">
+        <div class="wrap">
+            <div class="block__head">
+                <h2 class="h2" id="t-dest">{t("home.featured-t")}</h2>
+                <a class="block__link" href={localizePath("/projects")}>{t("home.all-projects", { n: projects.length })}</a>
+            </div>
 
-	
-	<Trans i18nKey="home.projects-pro-t">
-		<h2 class="text-3xl w-full font-bold mb-2"></h2>
-		<u></u>
-		<a href="https://pogo.com/" target="_blank"></a>
-	</Trans>
+            <section class="group">
+                <div class="group__head">
+                    <h3 class="group__title">
+                        <Trans i18nKey="home.projects-linko-t">
+                            <span></span>
+                            <strong></strong>
+                            <a href="https://www.gamesglobal.com/" target="_blank" rel="noopener noreferrer"></a>
+                        </Trans>
+                    </h3>
+                    <p class="group__when">{formatPeriod(linkoJob).from} – <span class="now">{t("cv.now")}</span></p>
+                </div>
+                <div class="list-end">
+                    {linko.map((info) => <ProjectRow info={info} level="h4" />)}
+                </div>
+            </section>
 
-	<ul>
-	{
-		professional_projects.map((project) => (
-			<HorizontalCard
-				title={project.data.title}
-				excerpt={project.data.excerpt}
-				img={project.data.thumbnail}
-				url={localizePath("/projects/" + project.slug)}
-				category = {project.data.category}
-				tags = {project.data.tags}
-			/>
-		)) 
-	}
-	</ul>
+            <section class="group">
+                <div class="group__head">
+                    <h3 class="group__title">
+                        <Trans i18nKey="home.projects-pro-t">
+                            <span></span>
+                            <strong></strong>
+                            <a href="https://pogo.com/" target="_blank" rel="noopener noreferrer"></a>
+                        </Trans>
+                    </h3>
+                    <p class="group__when">{formatPeriod(montiJob).from} – {formatPeriod(magicJob).to}</p>
+                </div>
+                <div class="list-end">
+                    {pogo.map((info) => <ProjectBrief info={info} level="h4" />)}
+                </div>
+            </section>
 
-	<Trans i18nKey="home.projects-per-t">
-		<h2 class="text-3xl w-full font-bold mb-2 mt-10"></h2>
-		<u></u>
-		<a href="https://frasquitogames.com/" target="_blank"></a>
-	</Trans>
+            <section class="group">
+                <div class="group__head">
+                    <h3 class="group__title">
+                        <img class="group__logo" src="/images/brand_logo.png" alt="" width="64" height="64" loading="lazy" />
+                        <Trans i18nKey="home.projects-per-t">
+                            <span></span>
+                            <strong></strong>
+                            <a href="https://frasquitogames.com/" target="_blank" rel="noopener noreferrer"></a>
+                        </Trans>
+                    </h3>
+                    <p class="group__when">{formatPeriod(perJob).from} – {formatPeriod(perJob).to}</p>
+                </div>
+                <div class="list-end">
+                    {personal.map((info) => <ProjectBrief info={info} level="h4" />)}
+                </div>
+            </section>
 
-	<ul>
-	{
-		personal_projects.map((project) => (
-			<HorizontalCard
-				title={project.data.title}
-				excerpt={project.data.excerpt}
-				img={project.data.thumbnail}
-				url={localizePath("/projects/" + project.slug)}
-				category = {project.data.category}
-				tags = {project.data.tags}
-			/>
-		)) 
-	}
-	</ul>
+            <p class="all-link"><a class="btn btn--line" href={localizePath("/projects")}>{t("home.all-projects", { n: projects.length })}</a></p>
+        </div>
+    </section>
 </BaseLayout>

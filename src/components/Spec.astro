@@ -1,0 +1,23 @@
+---
+import { t } from "i18next";
+
+/* Datos de un proyecto: estudio, etapa, tecnología, tipo y enlaces. */
+const { info } = Astro.props;
+---
+
+<dl class="spec">
+    <div><dt>{t("spec.studio")}</dt><dd>{info.studio}</dd></div>
+    {info.when && <div><dt>{t("spec.period")}</dt><dd>{info.when}</dd></div>}
+    {info.tech.length > 0 && <div><dt>{t("spec.tech")}</dt><dd>{info.tech.join(", ")}</dd></div>}
+    {info.kind.length > 0 && <div><dt>{t("spec.kind")}</dt><dd>{info.kind.join(", ")}</dd></div>}
+    {info.links.length > 0 && (
+        <div>
+            <dt>{t("spec.links")}</dt>
+            <dd class="spec__links">
+                {info.links.map((link: { url: string; value: string }) => (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">{t(link.value)}</a>
+                ))}
+            </dd>
+        </div>
+    )}
+</dl>

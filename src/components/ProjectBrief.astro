@@ -1,0 +1,17 @@
+---
+import Cover from "./Cover.astro";
+
+/* Fila breve de proyecto para la página de inicio. Toda la fila enlaza a la ficha. */
+const { info, level = "h4" } = Astro.props;
+const Heading = level;
+---
+
+<article class="row">
+    <Cover img={info.img} title={info.title} small />
+    <div>
+        <Heading class="row__title"><a href={info.url}>{info.title}</a></Heading>
+        <p class="row__role">{info.role}</p>
+    </div>
+    <p class="row__stack">{info.tech.join(", ")}</p>
+    <p class="row__when">{info.when}</p>
+</article>

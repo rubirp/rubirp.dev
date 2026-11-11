@@ -1,56 +1,42 @@
 ---
 import { t } from "i18next";
+import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
-import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
-import Category from "../components/Category.astro";
-import Carousel from "../components/Carousel.astro";
+import Spec from "../components/Spec.astro";
+import Gallery from "../components/Gallery.astro";
+import { projectInfo } from "../data/site";
 
-const { title, description, subtitle, category, content, main_media, media, links, tags} = Astro.props;
+/* Ficha de un proyecto: imágenes, texto y panel de datos. */
+const { entry } = Astro.props;
+const data = entry.data;
+const info = projectInfo(entry);
 
+type Media = { url: string; alt: string };
+const images: Media[] = data.main_media ? [data.main_media] : (data.media ?? []).filter((item: Media) => item.url);
 ---
 
-<BaseLayout title={title} description={t(description)}>
-  <div class="md:flex md:justify-center">
-    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
-      {
-        main_media && <Image width="750" height="422" format="webp" src={main_media.url} alt={main_media.alt} class="w-full mb-6"/>
-        || 
-        media && <Carousel media={media} />
-      }
-      
-      <div class="flex justify-between">
-        <div class="flex">
-          <h1 class="title my-2 text-4xl mr-4">{t(title)}</h1>
-          {category && <Category category = {category}/>}
+<BaseLayout title={info.title} description={t(data.description)} active="projects">
+    <div class="wrap view-pad">
+        <div class="page-head">
+            <p class="crumb"><a href={localizePath("/projects")}>{t("projects.back")}</a></p>
+            <h1 class="page-title">{info.title}</h1>
+            <p class="page-sub">{info.tagline}</p>
         </div>
-        {
-          links &&
-          <div class="my-auto">
-            {
-              links.map((link:{url:string, value:string}) => 
-                <a href={link.url} target="_blank" class="ml-4 font-medium hover:underline text-secondary">
-                  <span>{t(link.value)}</span>
-                  <svg class="w-4 h-4 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
-                </a> 
-              )
-            }
-          </div>
-        }
-      </div>
-      {subtitle && <h2 class="text-2xl">{t(subtitle)}</h2>}
-      <div class="card-actions justify-end mt-2">{tags && tags.map((tag: string) => <div class="badge badge-outline">{t(tag)}</div>)}</div>
-      <div class="divider my-2"></div>
-      {
-      content &&
-      <Trans i18nKey={content}>
-        <text></text>
-        <br></br>
-      </Trans>
-      }
 
-      <slot />
-      
-    </article>
-  </div>
+        <div class="detail">
+            <article>
+                {images.length > 0 && <div class="detail__media"><Gallery images={images} /></div>}
+                <div class="prose">
+                    {data.content && (
+                        <Trans i18nKey={data.content}>
+                            <p></p>
+                        </Trans>
+                    )}
+                    <slot />
+                </div>
+            </article>
+            <Spec info={info} />
+        </div>
+    </div>
 </BaseLayout>

@@ -1,7 +1,22 @@
 ---
-const today = new Date();
+import { t } from "i18next";
+import { EMAIL, SOCIAL } from "../data/site";
 ---
 
-<footer class="footer footer-center block mb-5 pt-10">
-    <div class="pb-2"> &copy; {today.getFullYear()} Rubén Rodríguez Pardo</div>
+<footer class="foot">
+    <div class="wrap foot__in">
+        <div>
+            <p class="foot__name">{t("sidebar.rubi.title")}</p>
+            <p class="foot__mail"><a href={"mailto:" + EMAIL}>{EMAIL}</a></p>
+        </div>
+        <ul class="foot__links">
+            {SOCIAL.map((item) => (
+                <li><a href={item.url} target="_blank" rel="noopener noreferrer">{item.label}</a></li>
+            ))}
+        </ul>
+        <a class="foot__brand" href="https://frasquitogames.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/images/brand_logo.png" alt="" width="72" height="72" loading="lazy" />
+            <span>{t("sidebar.brand.title")} <small>{t("sidebar.brand.subtitle")}</small></span>
+        </a>
+    </div>
 </footer>

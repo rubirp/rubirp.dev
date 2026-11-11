@@ -5,6 +5,7 @@ subtitle: 'content.projects.risk.subtitle'
 description: 'content.projects.risk.description'
 excerpt: 'content.projects.risk.excerpt'
 category: 'professional'
+company: 'pogo'
 thumbnail: '/images/risk/0.webp'
 
 content: 'content.projects.risk.content'

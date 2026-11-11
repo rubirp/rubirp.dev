@@ -5,6 +5,7 @@ subtitle: 'content.projects.yahtzee.subtitle'
 description: 'content.projects.yahtzee.description'
 excerpt: 'content.projects.yahtzee.excerpt'
 category: 'professional'
+company: 'pogo'
 thumbnail: '/images/yahtzee/0.webp'
 
 content: 'content.projects.yahtzee.content'

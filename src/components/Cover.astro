@@ -1,0 +1,9 @@
+---
+/* Portada 16:9. El título queda debajo de la imagen y se ve si esta no carga. */
+const { img, title, small = false } = Astro.props;
+---
+
+<figure class:list={["cover", { "cover--s": small }]}>
+    <span class="cover__alt" aria-hidden="true">{title}</span>
+    {img && <img src={img} alt="" width="640" height="360" loading="lazy" decoding="async" onerror="this.hidden=true" />}
+</figure>

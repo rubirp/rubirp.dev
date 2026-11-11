@@ -1,177 +1,123 @@
 ---
 import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TimeLineElement from "../../components/cv/TimeLine.astro";
+import { EMAIL, jobs, formatPeriod } from "../../data/site";
 
 changeLanguage("en");
 
 const isSpanish = i18next.language === "es";
+const sections = [
+    { id: "perfil", label: t("cv.summary-t") },
+    { id: "experiencia", label: t("cv.experience-t") },
+    { id: "educacion", label: t("cv.education-t") },
+    { id: "tecnologias", label: t("cv.technologies-t") },
+    { id: "habilidades", label: t("cv.skills-t") },
+];
+const education = [1, 2];
+const technologies = [
+    { label: t("cv.technologies-s1"), items: ["Cocos Creator", "Unity", "Godot", "PhaserJS", "SFML"] },
+    { label: t("cv.technologies-s2"), items: ["TypeScript", "JavaScript", "C/C++", "C#", "HTML", "CSS"] },
+    { label: t("cv.technologies-s3"), items: ["Git", "Jenkins", "Jest", "Cypress", "Spine", "Jira", "Trello", "Perforce"] },
+];
+const skills = [1, 2, 3, 4, 5];
 ---
 
-<BaseLayout title={t("cv.title")} description={t("cv.description")} sideBarActiveItemID="cv">
+<BaseLayout title={t("cv.title")} description={t("cv.description")} active="cv">
+    <div class="wrap">
+        <div class="page-head">
+            <h1 class="page-title">{t("cv.page-title")}</h1>
+            <p class="page-sub">{t("cv.lead")}</p>
+            <div class="cv-actions">
+                <a class="btn btn--ink" href={isSpanish ? "/docs/cv-es.pdf" : "/docs/cv-en.pdf"} target="_blank" rel="noopener">{t("links.curriculum")}</a>
+                <a class="btn btn--line" href={"mailto:" + EMAIL}>{t("sidebar.rubi.contact")}</a>
+            </div>
+        </div>
 
-  <div class="flex justify-end">
-    <a class="whitespace-nowrap bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href={isSpanish ? "/docs/cv-es.pdf" : "/docs/cv-en.pdf"} target="_blank" >
-      <span>{t("links.curriculum")}</span>
-      <svg class="w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:currentColor;transform: ;msFilter:;"><path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"></path><path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path></svg>
-    </a>
-  </div>
+        <div class="cv">
+            <nav class="cv__index" aria-label={t("cv.index-label")}>
+                {sections.map((section) => <a href={"#" + section.id}>{section.label}</a>)}
+            </nav>
 
-  <div class="mb-5">
-    <h2 class="text-3xl font-bold">{t("cv.summary-t")}</h2>
-  </div>
+            <div>
+                <section class="cv-sec" id="perfil">
+                    <h2 class="h2">{t("cv.summary-t")}</h2>
+                    <div class="prose">
+                        <Trans i18nKey="cv.summary-d">
+                            <p></p>
+                        </Trans>
+                    </div>
+                </section>
 
-  <div class="mb-10">
-    <Trans i18nKey="cv.summary-d">
-      <br></br>
-    </Trans>
-  </div>
+                <section class="cv-sec" id="experiencia">
+                    <h2 class="h2">{t("cv.experience-t")}</h2>
+                    {jobs.map((job) => (
+                        <article class="job">
+                            <div class="job__when">
+                                <p class="job__dates">
+                                    {formatPeriod(job).from} – {job.to === null ? <span class="now">{t("cv.now")}</span> : formatPeriod(job).to}
+                                </p>
+                                <p class="job__where">{t(`${job.key}.where`)}</p>
+                            </div>
+                            <div>
+                                <h3 class="job__org">{t(`${job.key}.org`)}</h3>
+                                <p class="job__role">{t(`${job.key}.role`)}</p>
+                                <p class="job__text">{t(`${job.key}.description`)}</p>
+                                <ol class="subs">
+                                    {job.projects.map((project) => {
+                                        const title = t(`${job.key}.${project.n}.title`);
+                                        return (
+                                            <li>
+                                                <h4 class="sub__title">
+                                                    {project.slug
+                                                        ? <a href={localizePath("/projects/" + project.slug)}>{title}</a>
+                                                        : project.url
+                                                            ? <a href={project.url} target="_blank" rel="noopener noreferrer">{title}</a>
+                                                            : title}
+                                                </h4>
+                                                <p class="sub__role">{t(`${job.key}.${project.n}.subtitle`)}</p>
+                                                <p class="sub__did">{t(`${job.key}.${project.n}.description`)}</p>
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
+                            </div>
+                        </article>
+                    ))}
+                </section>
 
-  <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">{t("cv.experience-t")}</h2>
-  </div>
+                <section class="cv-sec" id="educacion">
+                    <h2 class="h2">{t("cv.education-t")}</h2>
+                    {education.map((n) => (
+                        <article class="job">
+                            <div class="job__when">
+                                <p class="job__dates">{t(`cv.education-tl-d${n}`)}</p>
+                                <p class="job__where">{t(`cv.education-tl-w${n}`)}</p>
+                            </div>
+                            <div>
+                                <h3 class="job__org">{t(`cv.education-tl-t${n}`)}</h3>
+                                <p class="job__role">{t(`cv.education-tl-o${n}`)}</p>
+                            </div>
+                        </article>
+                    ))}
+                </section>
 
-  <div class="time-line-container">
+                <section class="cv-sec" id="tecnologias">
+                    <h2 class="h2">{t("cv.technologies-t")}</h2>
+                    {technologies.map((group) => (
+                        <div class="tech">
+                            <h3 class="tech__label">{group.label}</h3>
+                            <ul class="chips">{group.items.map((item) => <li>{item}</li>)}</ul>
+                        </div>
+                    ))}
+                </section>
 
-    <TimeLineElement
-      title={t("cv.projects.pro.magic-media.title")}
-      subtitle={t("cv.projects.pro.magic-media.subtitle")}
-      description={t("cv.projects.pro.magic-media.description")}
-      projects={[
-        {
-          title: t("cv.projects.pro.magic-media.0.title"),
-          subtitle: t("cv.projects.pro.magic-media.0.subtitle"),
-          description: t("cv.projects.pro.magic-media.0.description"),
-          images: [{url: "/images/slots/3.webp", alt: "Imagen 1"}],
-          slug: "pogo-slots",
-          url: "https://www.pogo.com/games/pogo-slots"
-        }
-      ]}
-    />
-
-    <TimeLineElement
-      title={t("cv.projects.pro.monti-games.title")}
-      subtitle={t("cv.projects.pro.monti-games.subtitle")}
-      description={t("cv.projects.pro.monti-games.description")}
-      projects={[
-        {
-          title: t("cv.projects.pro.monti-games.0.title"),
-          subtitle: t("cv.projects.pro.monti-games.0.subtitle"),
-          description: t("cv.projects.pro.monti-games.0.description"),
-          images: [{url: "/images/risk/1.webp", alt: "Imagen 1"}],
-          slug: "risk-pogo-domination",
-          url: "https://www.pogo.com/games/risk-pogo-domination"
-        },
-        {
-          title: t("cv.projects.pro.monti-games.1.title"),
-          subtitle: t("cv.projects.pro.monti-games.1.subtitle"),
-          description: t("cv.projects.pro.monti-games.1.description"),
-          images: [{url: "/images/yahtzee/1.webp", alt: "Imagen 1"}],
-          slug: "yahtzee-wild",
-          url: "https://www.pogo.com/games/yahtzee-wild"
-        },
-        {
-          title: t("cv.projects.pro.monti-games.2.title"),
-          subtitle: t("cv.projects.pro.monti-games.2.subtitle"),
-          description: t("cv.projects.pro.monti-games.2.description"),
-          images: [{url: "/images/scrabble/1.webp", alt: "Imagen 1"}],
-          slug: "scrabble",
-          url: "https://www.pogo.com/games/scrabble"
-        }
-      ]}
-    />
-
-    <TimeLineElement
-    title={t("cv.projects.per.title")}
-    subtitle={t("cv.projects.per.subtitle")}
-    description={t("cv.projects.per.description")}
-      projects={[
-        {
-          title: t("cv.projects.per.0.title"),
-          subtitle: t("cv.projects.per.0.subtitle"),
-          description: t("cv.projects.per.0.description"),
-          images: [{url: "/images/touch-the-coin/0.png", alt: "Imagen 1"}],
-          slug: "touch-the-coin",
-          url: "https://frasquitogames.itch.io/touch-the-coin"
-        },
-        {
-          title: t("cv.projects.per.1.title"),
-          subtitle: t("cv.projects.per.1.subtitle"),
-          description: t("cv.projects.per.1.description"),
-          images: [{url: "/images/pet-balls/1.png", alt: "Imagen 1"}],
-          slug: "pet-balls",
-          url: "https://frasquitogames.itch.io/pet-balls"
-        },
-        {
-          title: t("cv.projects.per.2.title"),
-          subtitle: t("cv.projects.per.2.subtitle"),
-          description: t("cv.projects.per.2.description"),
-          images: [{url: "/images/projects-thumbnail.png", alt: "Imagen 1"}],
-          url: "https://frasquitogames.com"
-        }
-      ]}
-    />
-  </div>
-
-  <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">{t("cv.education-t")}</h2>
-  </div>
-
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement title={t("cv.education-tl-t1")} subtitle={t("cv.education-tl-s1")}/>
-    <TimeLineElement title={t("cv.education-tl-t2")} subtitle={t("cv.education-tl-s2")}/>
-  </div>
-
-  <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">{t("cv.technologies-t")}</h2>
-  </div>
-
-  <div class="mb-2">
-    <h3 class="font-semibold mb-1">{t("cv.technologies-s1")}</h3>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>Cocos Creator</li>
-    <li>Unity</li>
-    <li>Godot</li>
-    <li>PhaserJS</li>
-    <li>SFML</li>
-  </ul>
-
-  <div class="mb-2">
-    <h3 class="font-semibold mb-1">{t("cv.technologies-s2")}</h3>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>JavaScript</li>
-    <li>C/C++</li>
-    <li>C#</li>
-    <li>HTML</li>
-    <li>CSS</li>
-  </ul>
-
-  <div class="mb-2">
-    <h3 class="font-semibold mb-1">{t("cv.technologies-s3")}</h3>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>Git</li>
-    <li>Perforce</li>
-    <li>Slack</li>
-    <li>Jira</li>
-    <li>Basecamp</li>
-  </ul>
-
-  <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">{t("cv.skills-t")}</h2>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>{t("cv.skill-1")}</li>
-    <li>{t("cv.skill-2")}</li>
-    <li>{t("cv.skill-3")}</li>
-    <li>{t("cv.skill-4")}</li>
-    <li>{t("cv.skill-5")}</li>
-  </ul>
+                <section class="cv-sec" id="habilidades">
+                    <h2 class="h2">{t("cv.skills-t")}</h2>
+                    <ul class="chips">{skills.map((n) => <li>{t(`cv.skill-${n}`)}</li>)}</ul>
+                </section>
+            </div>
+        </div>
+    </div>
 </BaseLayout>

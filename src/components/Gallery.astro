@@ -1,0 +1,103 @@
+---
+import { t } from "i18next";
+
+/*
+  Galería de imágenes de un proyecto: una imagen a la vez, flechas, contador y miniaturas.
+  El carril es un scroll horizontal con ajuste (scroll-snap), así que también responde al
+  gesto de deslizar y funciona sin JavaScript; el script solo añade los controles.
+*/
+type Media = { url: string; alt: string };
+const { images } = Astro.props as { images: Media[] };
+const many = images.length > 1;
+---
+
+<div class="gallery" data-gallery>
+    <div class="gallery__stage">
+        <ul class="gallery__track" data-track tabindex={many ? 0 : undefined} aria-label={many ? t("gallery.label") : undefined}>
+            {images.map((image, index) => (
+                <li class="gallery__slide">
+                    <img src={image.url} alt={image.alt} width="1280" height="720" loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+                </li>
+            ))}
+        </ul>
+        {many && (
+            <button class="gallery__nav gallery__nav--prev" type="button" data-prev aria-label={t("gallery.prev")} hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="gallery__nav gallery__nav--next" type="button" data-next aria-label={t("gallery.next")} hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <p class="gallery__count" aria-hidden="true"><span data-current>1</span> / {images.length}</p>
+        )}
+    </div>
+    {many && (
+        <ul class="gallery__thumbs" data-thumbs hidden>
+            {images.map((image, index) => (
+                <li>
+                    <button type="button" data-go={index} aria-label={t("gallery.go", { n: index + 1 })} aria-current={index === 0 ? "true" : undefined}>
+                        <img src={image.url} alt="" width="160" height="90" loading="lazy" decoding="async" />
+                    </button>
+                </li>
+            ))}
+        </ul>
+    )}
+</div>
+
+<script is:inline>
+(function () {
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    [].forEach.call(document.querySelectorAll("[data-gallery]"), function (gallery) {
+        var track = gallery.querySelector("[data-track]");
+        var prev = gallery.querySelector("[data-prev]");
+        var next = gallery.querySelector("[data-next]");
+        var current = gallery.querySelector("[data-current]");
+        var thumbs = gallery.querySelector("[data-thumbs]");
+        var buttons = thumbs ? [].slice.call(thumbs.querySelectorAll("[data-go]")) : [];
+        var total = track.children.length;
+        if (total < 2 || !prev || !next) { return; }
+
+        var index = 0;
+        function show(i) {
+            index = Math.max(0, Math.min(total - 1, i));
+            prev.disabled = index === 0;
+            next.disabled = index === total - 1;
+            if (current) { current.textContent = String(index + 1); }
+            buttons.forEach(function (button, n) {
+                if (n === index) { button.setAttribute("aria-current", "true"); }
+                else { button.removeAttribute("aria-current"); }
+            });
+        }
+        function go(i) {
+            var target = Math.max(0, Math.min(total - 1, i));
+            track.scrollTo({ left: target * track.clientWidth, behavior: reduced ? "auto" : "smooth" });
+            show(target);
+        }
+
+        prev.hidden = false;
+        next.hidden = false;
+        if (thumbs) { thumbs.hidden = false; }
+        prev.addEventListener("click", function () { go(index - 1); });
+        next.addEventListener("click", function () { go(index + 1); });
+        buttons.forEach(function (button, n) {
+            button.addEventListener("click", function () { go(n); });
+        });
+        track.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowLeft") { event.preventDefault(); go(index - 1); }
+            if (event.key === "ArrowRight") { event.preventDefault(); go(index + 1); }
+        });
+        /* Al deslizar con el dedo o la rueda, los controles siguen a la imagen visible. */
+        var ticking = false;
+        track.addEventListener("scroll", function () {
+            if (ticking) { return; }
+            ticking = true;
+            requestAnimationFrame(function () {
+                ticking = false;
+                var visible = Math.round(track.scrollLeft / track.clientWidth);
+                if (visible !== index) { show(visible); }
+            });
+        });
+        show(0);
+    });
+})();
+</script>

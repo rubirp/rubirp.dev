@@ -30,6 +30,7 @@ const { title, description } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
 <link rel="icon" type="image/svg+xml" href={"/favicon.svg"} />
 <link rel="alternate" href="https://rubirp.dev/en" hreflang="en-GB" />
 <link rel="canonical" href="https://rubirp.dev" />
@@ -39,6 +40,11 @@ const { title, description } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+
+<!-- Fonts: Archivo (interfaz y titulares) y Literata (lectura) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Literata:opsz,wght@7..72,200..900&display=swap" />
 
 <!-- Href Langs -->
 <HeadHrefLangs />

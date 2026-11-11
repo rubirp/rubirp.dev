@@ -1,36 +1,23 @@
 ---
-import { changeLanguage, t } from "i18next";
+import { changeLanguage } from "i18next";
 import { type CollectionEntry, getCollection } from "astro:content";
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { isPublished } from "../../../data/site";
 
 changeLanguage("en");
 
 export async function getStaticPaths() {
-    const projects = await getCollection("projects", ({ data }) => {
-        return import.meta.env.PROD ? data.draft !== true : true;
-    });
+    const projects = await getCollection("projects", isPublished);
     return projects.map((project) => ({
         params: { slug: project.slug },
         props: project,
     }));
 }
 type Props = CollectionEntry<"projects">;
-const { slug } = Astro.params;
 const project = Astro.props;
-const data = project.data;
 const { Content } = await project.render();
 ---
 
-<ProjectLayout 
-    title={t(data.title)} 
-    description={data.description} 
-    subtitle={data.subtitle}
-    category={data.category} 
-    content={data.content}
-    tags={data.tags}
-    main_media={data.main_media}
-    media={data.media}
-    links={data.links}>
-    <Content/>
+<ProjectLayout entry={project}>
+    <Content />
 </ProjectLayout>
- 

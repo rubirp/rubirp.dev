@@ -5,6 +5,7 @@ subtitle: 'content.projects.slots.subtitle'
 description: 'content.projects.slots.description'
 excerpt: 'content.projects.slots.excerpt'
 category: 'professional'
+company: 'pogo'
 thumbnail: '/images/slots/0.webp'
 
 content: 'content.projects.slots.content'
